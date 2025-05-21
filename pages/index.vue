@@ -1,5 +1,3 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <h1>River Warrior</h1>
 </template>
