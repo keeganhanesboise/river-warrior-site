@@ -1,3 +1,4 @@
 <template>
-  <HeroImg />
+  <HeroVideo />
+  <Trailer />
 </template>
