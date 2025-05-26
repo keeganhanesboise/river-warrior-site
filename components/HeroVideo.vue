@@ -6,11 +6,13 @@
       loop
       muted
       playsinline
-      poster="/videos/hero-poster.jpg"
+      poster="/videos/kayaking-on-lake-sample-poster.jpg"
       preload="auto">
-      <source src="/videos/kayaking-on-lake.webm" type="video/webm" />
       <source
-        src="/videos/coverr-friends-kayaking-on-lake-in-mexico-8711-1080p.mp4"
+        src="/videos/kayaking-on-lake-sample-footage.webm"
+        type="video/webm" />
+      <source
+        src="/videos/kayaking-on-lake-sample-footage.mp4"
         type="video/mp4" />
       Your browser does not support the video tag.
     </video>
