@@ -58,7 +58,6 @@
   font-size: 1.25rem;
   line-height: 1.6;
   margin: 0;
-  opacity: 0.9;
 }
 
 .video-container-secondary {
@@ -81,6 +80,7 @@
   width: 100%;
   height: 100%;
   border: none;
+  border-radius: 8px;
 }
 
 @media (min-width: 640px) {
