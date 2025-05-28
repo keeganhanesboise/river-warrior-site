@@ -18,6 +18,7 @@
     </video>
 
     <div class="overlay" />
+    <div class="bottom-gradient" />
 
     <div class="hero-content">
       <nav class="navigation">
@@ -62,6 +63,16 @@
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  background: linear-gradient(to bottom, rgba(46, 78, 63, 0) 0%, #2E4E3F 100%);
   z-index: 1;
 }
 
