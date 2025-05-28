@@ -22,10 +22,14 @@ p {
 h1 {
     font-size: 2rem;
     font-family: 'Extenda 30 Deca', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: normal;
 }
 h2 {
     font-size: 1.5rem;
     font-family: 'Extenda 30 Deca', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: normal;
 }
 
 @media (min-width: 640px) {
