@@ -25,7 +25,7 @@
 
 <style scoped>
 .video-container-primary {
-  background-color: #2e4e3f;
+  background-color: #1e3a2f;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -82,7 +82,7 @@ onUnmounted(() => {
 
 <style scoped>
 .story-section {
-  background-color: #2e4e3f;
+  background-color: #1e3a2f;
   min-height: 200vh;
   padding: 5rem 2rem;
   position: relative;
@@ -115,7 +115,7 @@ onUnmounted(() => {
 .section-title {
   font-size: 2.5rem;
   margin: 0 0 1.5rem 0;
-  color: #90c4a7;
+  color: #a8d4bc;
   position: relative;
   padding-bottom: 1rem;
 }
@@ -127,7 +127,7 @@ onUnmounted(() => {
   left: 0;
   width: 25%;
   height: 2px;
-  background-color: #90c4a7;
+  background-color: #a8d4bc;
 }
 
 .section-text {
@@ -135,7 +135,7 @@ onUnmounted(() => {
   line-height: 1.6;
   margin: 0;
   color: #ffffff;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .image-container {
@@ -168,7 +168,7 @@ onUnmounted(() => {
 
 @media (min-width: 640px) {
   .story-section {
-    padding: 8rem 3rem;
+    padding: 0 3rem;
   }
 }
 
