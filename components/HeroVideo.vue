@@ -20,29 +20,17 @@
     <div class="overlay" />
 
     <div class="hero-content">
-      <div class="hero-text">
-        <h1>
-          Ann Rose
-          <br />
-          River Warrior
-        </h1>
-        <p>
-          “An inspiring agricultural documentary about and Appalachian, off-grid
-          farmer who is going full force into her next adventure - kayaking from
-          her neighborhood creek all the way to the Gulf of Mexico.”
-        </p>
-        <div class="call-to-action-container">
-          <button>Watch Trailer</button>
-          <button>Explore The Journey</button>
-        </div>
+      <div class="logo-container">
+        <h1 class="sr-only">River Warrior Documentary</h1>
+        <img id="logo" alt="" src="/images/logo_white.png" />
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-h1 {
-  margin-top: 0;
+#logo {
+  width: 100%;
 }
 
 .hero-section {
@@ -81,24 +69,7 @@ h1 {
   padding: 0 1rem;
 }
 
-.call-to-action-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.hero-text {
-  max-width: 600px;
-}
-
-.hero-text button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  color: black;
-  font-weight: 600;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
+.logo-container {
+  max-width: 800px;
 }
 </style>
