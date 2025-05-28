@@ -82,20 +82,14 @@ onUnmounted(() => {
 
 <style scoped>
 .story-section {
-  background-color: #4a4a4a;
+  background-color: #2e4e3f;
   min-height: 200vh;
   padding: 5rem 2rem;
   position: relative;
 }
 
 .story-section::before {
-  content: '';
-  position: absolute;
-  top: -150px;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, #2e4e3f 0%, #4a4a4a 100%);
+  display: none;
 }
 
 .content-wrapper {
@@ -121,7 +115,19 @@ onUnmounted(() => {
 .section-title {
   font-size: 2.5rem;
   margin: 0 0 1.5rem 0;
-  color: #ffffff;
+  color: #90c4a7;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  height: 2px;
+  background-color: #90c4a7;
 }
 
 .section-text {
