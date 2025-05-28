@@ -1,3 +1,17 @@
+<script setup lang="ts">
+interface NavLink {
+  name: string;
+  url: string;
+}
+
+const links: NavLink[] = [
+  { name: 'IMPACT', url: '/impact' },
+  { name: 'CREW', url: '/crew' },
+  { name: 'PRESS', url: '/press' },
+  { name: 'CONNECT', url: '/connect' }
+];
+</script>
+
 <template>
   <section class="hero-section">
     <video
@@ -23,13 +37,16 @@
     <div class="hero-content">
       <nav class="navigation">
         <ul>
-          <li><a class="nav-link" href="#">IMPACT</a></li>
-          <li><a class="nav-link" href="#">CREW</a></li>
-          <li><a class="nav-link" href="#">PRESS</a></li>
-          <li><a class="nav-link" href="#">CONNECT</a></li>
+          <li
+            v-for="(link, index) in links"
+            :key="link.name"
+            class="fade-in"
+            :style="{ animationDelay: `${index * 200 + 1000}ms` }">
+            <a class="nav-link" :href="link.url">{{ link.name }}</a>
+          </li>
         </ul>
       </nav>
-      <div class="logo-container">
+      <div class="logo-container fade-in">
         <h1 class="sr-only">River Warrior Documentary</h1>
         <img id="logo" alt="" src="/images/logo_white.png" />
       </div>
@@ -72,7 +89,7 @@
   left: 0;
   right: 0;
   height: 30vh;
-  background: linear-gradient(to bottom, rgba(46, 78, 63, 0) 0%, #2E4E3F 100%);
+  background: linear-gradient(to bottom, rgba(46, 78, 63, 0) 0%, #2e4e3f 100%);
   z-index: 1;
 }
 
@@ -90,6 +107,9 @@
 
 .logo-container {
   max-width: 800px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 500ms;
 }
 
 .navigation {
@@ -137,6 +157,22 @@
 
 .nav-link:hover::after {
   transform: scaleX(1);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 640px) {
