@@ -3,7 +3,7 @@
     <div class="video-container-primary">
       <div class="content-wrapper">
         <div class="text-content">
-          <h1 class="title">WATCH THE TRAILER</h1>
+          <h1 class="trailer-header">WATCH THE TRAILER</h1>
           <p class="logline">
             An inspiring agricultural adventure documentary about an
             Appalachian, off-grid farmer who is going full force into her next
@@ -47,11 +47,24 @@
   margin-right: auto;
 }
 
-.title {
+.trailer-header {
   font-size: 2.5rem;
-  margin: 0 0 1.5rem 0;
-  letter-spacing: 0.05em;
-  font-weight: normal;
+  margin: 0 0 2rem;
+  color: #a8d4bc;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.trailer-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: #a8d4bc;
 }
 
 .logline {
@@ -88,7 +101,7 @@
     padding: 8rem 3rem;
   }
 
-  .title {
+  .trailer-header {
     font-size: 3.5rem;
   }
 
