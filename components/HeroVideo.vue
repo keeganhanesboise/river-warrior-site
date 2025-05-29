@@ -1,17 +1,3 @@
-<script setup lang="ts">
-interface NavLink {
-  name: string;
-  url: string;
-}
-
-const links: NavLink[] = [
-  { name: 'IMPACT', url: '/impact' },
-  { name: 'CREW', url: '/crew' },
-  { name: 'PRESS', url: '/press' },
-  { name: 'CONNECT', url: '/connect' }
-];
-</script>
-
 <template>
   <section class="hero-section">
     <video
@@ -34,18 +20,9 @@ const links: NavLink[] = [
     <div class="overlay" />
     <div class="bottom-gradient" />
 
+    <MainNavigation />
+
     <div class="hero-content">
-      <nav class="navigation">
-        <ul>
-          <li
-            v-for="(link, index) in links"
-            :key="link.name"
-            class="fade-in"
-            :style="{ animationDelay: `${index * 200 + 1000}ms` }">
-            <a class="nav-link" :href="link.url">{{ link.name }}</a>
-          </li>
-        </ul>
-      </nav>
       <div class="logo-container fade-in">
         <h1 class="sr-only">River Warrior Documentary</h1>
         <img id="logo" alt="" src="/images/logo_white.png" />
@@ -112,53 +89,6 @@ const links: NavLink[] = [
   animation-delay: 500ms;
 }
 
-.navigation {
-  position: absolute;
-  top: 2rem;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 0 1rem;
-}
-
-.navigation ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
-  padding: 0.5rem 0.75rem;
-  position: relative;
-  display: inline-block;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0.75rem;
-  right: 0.75rem;
-  width: calc(100% - 1.5rem);
-  height: 2px;
-  background-color: white;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease-in-out;
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-}
-
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
@@ -172,12 +102,6 @@ const links: NavLink[] = [
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (min-width: 640px) {
-  .navigation ul {
-    gap: 3rem;
   }
 }
 </style>
