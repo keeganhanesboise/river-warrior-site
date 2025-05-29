@@ -1,0 +1,180 @@
+<script setup lang="ts">
+const currentYear = new Date().getFullYear();
+
+interface FooterLink {
+  name: string;
+  url: string;
+}
+
+const siteLinks: FooterLink[] = [
+  { name: 'Impact', url: '/#impact' },
+  { name: 'Crew', url: '/crew' },
+  { name: 'Press', url: '/#press' }
+];
+
+const socialLinks: FooterLink[] = [
+  { name: 'Instagram', url: '#' },
+  { name: 'Facebook', url: '#' },
+  { name: 'Twitter', url: '#' }
+];
+</script>
+
+<template>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section brand">
+        <img
+          alt="River Warrior Paddle Icon"
+          class="footer-logo"
+          src="/images/rw_paddle_icon.png" />
+      </div>
+
+      <div class="footer-section links">
+        <h3>Navigation</h3>
+        <ul>
+          <li v-for="link in siteLinks" :key="link.name">
+            <NuxtLink :to="link.url">{{ link.name }}</NuxtLink>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <a class="email-link" href="mailto:annrosedocumentary2024@gmail.com">
+          annrosedocumentary2024@gmail.com
+        </a>
+        <div class="social-links">
+          <a
+            v-for="social in socialLinks"
+            :key="social.name"
+            class="social-link"
+            :href="social.url"
+            rel="noopener noreferrer"
+            target="_blank">
+            {{ social.name }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        © {{ currentYear }} River Warrior Documentary. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</template>
+
+<style scoped>
+.site-footer {
+  background-color: #1e3a2f;
+  color: white;
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section {
+  text-align: center;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+}
+
+.footer-section h3 {
+  color: #a8d4bc;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #a8d4bc;
+}
+
+.email-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #a8d4bc;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #a8d4bc;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .footer-section {
+    text-align: left;
+  }
+
+  .brand {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+}
+</style>

@@ -1,5 +1,8 @@
 <template>
-  <HeroVideo />
-  <Trailer />
-  <ScrollingStory />
+  <main>
+    <HeroVideo />
+    <Trailer />
+    <ScrollingStory />
+    <SiteFooter />
+  </main>
 </template>

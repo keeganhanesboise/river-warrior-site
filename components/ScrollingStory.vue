@@ -128,7 +128,7 @@ onUnmounted(() => {
 
 <style scoped>
 #story-section {
-  background-color: #1e3a2f;
+  background-color: #f5f5f0;
   min-height: 200vh;
   padding: 5rem 2rem;
   position: relative;
@@ -156,12 +156,13 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2rem 0;
 }
 
 .section-title {
   font-size: 2.5rem;
   margin: 0 0 1.5rem 0;
-  color: #a8d4bc;
+  color: #1e3a2f;
   position: relative;
   padding-bottom: 1rem;
 }
@@ -173,15 +174,14 @@ onUnmounted(() => {
   left: 0;
   width: 25%;
   height: 2px;
-  background-color: #a8d4bc;
+  background-color: #1e3a2f;
 }
 
 .section-text {
   font-size: 1.25rem;
   line-height: 1.6;
   margin: 0;
-  color: #ffffff;
-  opacity: 1;
+  color: #1e3a2f;
 }
 
 .image-container {
@@ -220,7 +220,7 @@ onUnmounted(() => {
 
 @media (min-width: 640px) {
   #story-section {
-    padding: 8rem 3rem;
+    padding: 5rem 3rem;
   }
 }
 

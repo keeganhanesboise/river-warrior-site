@@ -61,6 +61,8 @@ const crewMembers: CrewMember[] = [
         </div>
       </div>
     </section>
+
+    <SiteFooter />
   </main>
 </template>
 
