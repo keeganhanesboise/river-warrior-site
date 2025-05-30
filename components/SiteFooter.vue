@@ -156,6 +156,12 @@ const socialLinks: FooterLink[] = [
   margin: 0;
 }
 
+@media (min-width: 640px) {
+  .links a {
+    padding-left: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .footer-content {
     grid-template-columns: repeat(3, 1fr);

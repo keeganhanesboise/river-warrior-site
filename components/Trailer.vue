@@ -101,6 +101,10 @@
     padding: 8rem 3rem;
   }
 
+  .video-container-secondary {
+    width: 75%
+  }
+
   .trailer-header {
     font-size: 3.5rem;
   }
