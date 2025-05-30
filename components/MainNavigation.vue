@@ -11,7 +11,7 @@ const allLinks: NavLink[] = [
   { name: 'HOME', url: '/' },
   { name: 'IMPACT', url: '/impact' },
   { name: 'CREW', url: '/crew' },
-  { name: 'PRESS', url: '/#press' },
+  { name: 'PRESS', url: '/press' },
   { name: 'CONNECT', url: '/#connect' }
 ];
 

@@ -1,0 +1,238 @@
+<script setup lang="ts">
+const pressItems = [
+  { title: 'Farmer completes 2000 mile paddle from carolina to the gulf', source: 'Blue Ridge Outdoors', url: 'https://www.blueridgeoutdoors.com/magazine/december-2024/farmer-completes-2000-mile-paddle-from-carolina-to-the-gulf/' },
+  { title: 'Rose Completes Paddle', source: 'App Voices', url: 'https://appvoices.org/2024/11/01/rose-completes-paddle/ ' },
+  { title: 'Ann Rose Update', source: 'App Voices', url: 'https://appvoices.org/2024/08/08/ann-rose-update/ ' },
+  { title: 'REI Podcast Interview', source: 'REI Podcasts', url: '' },
+]
+
+const stills = [
+  '/images/press1.jpg',
+  '/images/press2.jpg',
+  '/images/press3.jpg',
+  '/images/press4.jpg',
+  '/images/press6.jpg',
+  '/images/press7.jpg',
+  '/images/press8.jpg',
+]
+</script>
+
+<template>
+  <main>
+    <section class="hero">
+      <img alt="" class="hero-image" src="/images/press5.jpg" />
+      <MainNavigation />
+      <h1 class="hero-title">Press</h1>
+    </section>
+
+    <section class="press-links">
+      <div class="press-container">
+        <h2 class="section-title">In the News</h2>
+        <div class="press-cards">
+          <div v-for="(item, index) in pressItems" :key="index" class="press-card">
+            <a :href="item.url" rel="noopener noreferrer" target="_blank">
+              <h3 class="press-title">{{ item.title }}</h3>
+              <p class="press-source">{{ item.source }}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-stills">
+      <div class="stills-container">
+        <h2 class="section-title">Stills from the Documentary</h2>
+        <div class="stills-grid">
+          <img
+            v-for="(still, index) in stills"
+            :key="index"
+            alt="Documentary still"
+            :class="'still-' + ((index % 6) + 1)"
+            :src="still"/>
+        </div>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </main>
+</template>
+
+<style scoped>
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.press-links {
+  padding: 4rem 2rem;
+  background-color: #f5f5f0;
+}
+
+.press-container,
+.stills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1e3a2f;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.press-list li a {
+  color: #1e3a2f;
+  font-size: 1.25rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.press-list li a:hover {
+  color: #305d4d;
+}
+
+.still img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+.press-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.press-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.press-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.press-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.press-title {
+  font-size: 1.5rem;
+  color: #1e3a2f;
+  margin-bottom: 0.5rem;
+}
+
+.press-source {
+  font-size: 1rem;
+  color: #305d4d;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .press-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .press-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.doc-stills {
+  background-color: #fff;
+  padding: 4rem 2rem;
+}
+
+.stills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  grid-auto-rows: 200px;
+}
+
+.stills-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Varying size patterns */
+.still-1 {
+  grid-row: span 1;
+}
+
+.still-2 {
+  grid-column: span 2;
+}
+
+.still-3 {
+  grid-row: span 1;
+}
+
+.still-4 {
+  grid-column: span 1;
+}
+
+.still-5 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.still-6 {
+  grid-row: span 1;
+}
+</style>
