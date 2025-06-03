@@ -55,3 +55,13 @@ h2 {
         font-size: 2.5rem;
     }
 }
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.25s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
