@@ -7,21 +7,12 @@ interface NavLink {
 const route = useRoute();
 const isHomePage = computed(() => route.path === '/');
 
-const allLinks: NavLink[] = [
+const links: NavLink[] = [
   { name: 'HOME', url: '/' },
   { name: 'IMPACT', url: '/impact' },
   { name: 'CREW', url: '/crew' },
   { name: 'PRESS', url: '/press' },
-  { name: 'CONNECT', url: '/#connect' }
 ];
-
-const links = computed(() => {
-  const currentPath = route.path;
-  return allLinks.filter((link) => {
-    // Don't show the current page in navigation
-    return link.url !== currentPath;
-  });
-});
 </script>
 
 <template>

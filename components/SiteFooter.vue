@@ -7,9 +7,10 @@ interface FooterLink {
 }
 
 const siteLinks: FooterLink[] = [
-  { name: 'Impact', url: '/#impact' },
+  { name: 'Home', url: '/' },
+  { name: 'Impact', url: '/impact' },
   { name: 'Crew', url: '/crew' },
-  { name: 'Press', url: '/#press' }
+  { name: 'Press', url: '/press' }
 ];
 
 const socialLinks: FooterLink[] = [
@@ -74,11 +75,10 @@ const socialLinks: FooterLink[] = [
 
 .footer-content {
   max-width: 1000px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
 }
 
 .footer-section {

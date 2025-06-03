@@ -44,7 +44,7 @@ const crewMembers: CrewMember[] = [
     <section class="hero">
       <img alt="" class="hero-image" src="/images/camera_crew.jpg" />
       <MainNavigation />
-      <h1 class="hero-title">The Crew</h1>
+      <h1 class="hero-title">Crew</h1>
     </section>
 
     <section class="crew-members">
