@@ -47,7 +47,6 @@ const stills = [
             v-for="(still, index) in stills"
             :key="index"
             alt="Documentary still"
-            :class="'still-' + ((index % 6) + 1)"
             :src="still"/>
         </div>
       </div>
@@ -198,41 +197,27 @@ const stills = [
 
 .stills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .stills-grid img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Varying size patterns */
-.still-1 {
-  grid-row: span 1;
+@media (min-width: 600px) {
+  .stills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.still-2 {
-  grid-column: span 2;
-}
-
-.still-3 {
-  grid-row: span 1;
-}
-
-.still-4 {
-  grid-column: span 1;
-}
-
-.still-5 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.still-6 {
-  grid-row: span 1;
+@media (min-width: 900px) {
+  .stills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>
