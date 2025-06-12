@@ -6,16 +6,18 @@
       loop
       muted
       playsinline
-      poster="/videos/kayaking-on-lake-sample-poster.jpg"
+      poster="/videos/hero-video-poster.jpg"
       preload="auto">
-      <source
-        src="/videos/kayaking-on-lake-sample-footage.webm"
-        type="video/webm" />
-      <source
-        src="/videos/kayaking-on-lake-sample-footage.mp4"
-        type="video/mp4" />
+      <source src="/videos/hero-video.webm" type="video/webm" />
+      <source src="/videos/hero-video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    <noscript>
+      <img
+        src="/videos/hero-video-poster.jpg"
+        class="hero-video-fallback"
+        alt="" />
+    </noscript>
 
     <div class="overlay" />
     <div class="bottom-gradient" />
