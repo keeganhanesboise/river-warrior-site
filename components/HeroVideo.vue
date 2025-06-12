@@ -12,12 +12,6 @@
       <source src="/videos/hero-video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <noscript>
-      <img
-        src="/videos/hero-video-poster.jpg"
-        class="hero-video-fallback"
-        alt="" />
-    </noscript>
 
     <div class="overlay" />
     <div class="bottom-gradient" />
@@ -53,6 +47,13 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+}
+
+.hero-video-fallback {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .overlay {
