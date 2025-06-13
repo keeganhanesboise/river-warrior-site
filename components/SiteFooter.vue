@@ -6,6 +6,12 @@ interface FooterLink {
   url: string;
 }
 
+interface FooterSocialIcon {
+  name: string;
+  url: string;
+  icon: string;
+}
+
 const siteLinks: FooterLink[] = [
   { name: 'Home', url: '/' },
   { name: 'Impact', url: '/impact' },
@@ -13,10 +19,12 @@ const siteLinks: FooterLink[] = [
   { name: 'Press', url: '/press' }
 ];
 
-const socialLinks: FooterLink[] = [
-  { name: 'Instagram', url: '#' },
-  { name: 'Facebook', url: '#' },
-  { name: 'Twitter', url: '#' }
+const socialLinks: FooterSocialIcon[] = [
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/riverwarrior2024/',
+    icon: '/images/instagram_logo.svg'
+  }
 ];
 </script>
 
@@ -52,7 +60,10 @@ const socialLinks: FooterLink[] = [
             :href="social.url"
             rel="noopener noreferrer"
             target="_blank">
-            {{ social.name }}
+            <img
+              alt="Documentary Instagram Page"
+              class="social-icon"
+              :src="social.icon" />
           </a>
         </div>
       </div>
@@ -137,11 +148,30 @@ const socialLinks: FooterLink[] = [
 .social-link {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
 }
 
 .social-link:hover {
   color: #a8d4bc;
+  background-color: #a8d4bc;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  filter: brightness(0) invert(0.2);
 }
 
 .footer-bottom {
