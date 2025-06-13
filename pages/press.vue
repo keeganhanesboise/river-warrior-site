@@ -39,6 +39,41 @@ const stills = [
   '/images/press8.jpg',
   '/images/press9.jpg'
 ];
+
+const showAllPress = ref(false);
+const showAllStills = ref(false);
+const isMobile = ref(false);
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth < 768;
+};
+
+onMounted(() => {
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkMobile);
+});
+
+const displayedPressItems = computed(() => {
+  if (!isMobile.value) return pressItems;
+  return showAllPress.value ? pressItems : pressItems.slice(0, 3);
+});
+
+const displayedStills = computed(() => {
+  if (!isMobile.value) return stills;
+  return showAllStills.value ? stills : stills.slice(0, 3);
+});
+
+const togglePress = () => {
+  showAllPress.value = !showAllPress.value;
+};
+
+const toggleStills = () => {
+  showAllStills.value = !showAllStills.value;
+};
 </script>
 
 <template>
@@ -54,7 +89,7 @@ const stills = [
         <h2 class="section-title">In the News</h2>
         <div class="press-cards">
           <div
-            v-for="(item, index) in pressItems"
+            v-for="(item, index) in displayedPressItems"
             :key="index"
             class="press-card">
             <a :href="item.url" rel="noopener noreferrer" target="_blank">
@@ -63,6 +98,12 @@ const stills = [
             </a>
           </div>
         </div>
+        <button
+          v-if="pressItems.length > 3"
+          class="show-more-btn mobile-only"
+          @click="togglePress">
+          {{ showAllPress ? 'Show Less' : 'Show More' }}
+        </button>
       </div>
     </section>
 
@@ -71,11 +112,17 @@ const stills = [
         <h2 class="section-title">Stills from the Documentary</h2>
         <div class="stills-grid">
           <img
-            v-for="(still, index) in stills"
+            v-for="(still, index) in displayedStills"
             :key="index"
             alt="Documentary still"
             :src="still" />
         </div>
+        <button
+          v-if="stills.length > 3"
+          class="show-more-btn mobile-only"
+          @click="toggleStills">
+          {{ showAllStills ? 'Show Less' : 'Show More' }}
+        </button>
       </div>
     </section>
 
@@ -171,6 +218,7 @@ const stills = [
 
 .press-card {
   background: white;
+  cursor: pointer;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
@@ -247,6 +295,29 @@ const stills = [
 @media (min-width: 900px) {
   .stills-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.show-more-btn {
+  display: none;
+  margin: 2rem auto 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #1e3a2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #305d4d;
+}
+
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
   }
 }
 </style>
