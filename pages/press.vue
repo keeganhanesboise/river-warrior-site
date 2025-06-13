@@ -43,6 +43,8 @@ const stills = [
 const showAllPress = ref(false);
 const showAllStills = ref(false);
 const isMobile = ref(false);
+const selectedImage = ref('');
+const isLightboxOpen = ref(false);
 
 const checkMobile = () => {
   isMobile.value = window.innerWidth < 768;
@@ -73,6 +75,15 @@ const togglePress = () => {
 
 const toggleStills = () => {
   showAllStills.value = !showAllStills.value;
+};
+
+const openLightbox = (imageSrc: string) => {
+  selectedImage.value = imageSrc;
+  isLightboxOpen.value = true;
+};
+
+const closeLightbox = () => {
+  isLightboxOpen.value = false;
 };
 </script>
 
@@ -111,11 +122,16 @@ const toggleStills = () => {
       <div class="stills-container">
         <h2 class="section-title">Stills from the Documentary</h2>
         <div class="stills-grid">
-          <img
+          <div
             v-for="(still, index) in displayedStills"
             :key="index"
-            alt="Documentary still"
-            :src="still" />
+            class="still-wrapper"
+            role="button"
+            tabindex="0"
+            @click="openLightbox(still)"
+            @keydown.enter="openLightbox(still)">
+            <img alt="" :src="still" />
+          </div>
         </div>
         <button
           v-if="stills.length > 3"
@@ -125,6 +141,11 @@ const toggleStills = () => {
         </button>
       </div>
     </section>
+
+    <ImageLightbox
+      :image-src="selectedImage"
+      :is-open="isLightboxOpen"
+      @close="closeLightbox" />
 
     <SiteFooter />
   </main>
@@ -276,6 +297,15 @@ const toggleStills = () => {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
+}
+
+.still-wrapper {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.still-wrapper:hover {
+  transform: scale(1.02);
 }
 
 .stills-grid img {
