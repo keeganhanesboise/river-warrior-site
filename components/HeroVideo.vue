@@ -24,6 +24,22 @@
         <img id="logo" alt="" src="/images/logo_white.png" />
       </div>
     </div>
+
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll to explore</span>
+      <svg
+        class="scroll-arrow"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
   </section>
 </template>
 
@@ -105,6 +121,50 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+.scroll-text {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.scroll-arrow {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
   }
 }
 </style>
