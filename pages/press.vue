@@ -33,9 +33,11 @@ const stills = [
   '/images/press2.jpg',
   '/images/press3.jpg',
   '/images/press4.jpg',
+  '/images/press5.jpg',
   '/images/press6.jpg',
   '/images/press7.jpg',
-  '/images/press8.jpg'
+  '/images/press8.jpg',
+  '/images/press9.jpg'
 ];
 </script>
 
