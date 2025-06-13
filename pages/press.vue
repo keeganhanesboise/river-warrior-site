@@ -1,10 +1,32 @@
 <script setup lang="ts">
 const pressItems = [
-  { title: 'Farmer completes 2000 mile paddle from carolina to the gulf', source: 'Blue Ridge Outdoors', url: 'https://www.blueridgeoutdoors.com/magazine/december-2024/farmer-completes-2000-mile-paddle-from-carolina-to-the-gulf/' },
-  { title: 'Rose Completes Paddle', source: 'App Voices', url: 'https://appvoices.org/2024/11/01/rose-completes-paddle/ ' },
-  { title: 'Ann Rose Update', source: 'App Voices', url: 'https://appvoices.org/2024/08/08/ann-rose-update/ ' },
+  {
+    title: 'Farmer completes 2000 mile paddle from carolina to the gulf',
+    source: 'Blue Ridge Outdoors',
+    url: 'https://www.blueridgeoutdoors.com/magazine/december-2024/farmer-completes-2000-mile-paddle-from-carolina-to-the-gulf/'
+  },
+  {
+    title: 'Rose Completes Paddle',
+    source: 'App Voices',
+    url: 'https://appvoices.org/2024/11/01/rose-completes-paddle/ '
+  },
+  {
+    title: 'Ann Rose Update',
+    source: 'App Voices',
+    url: 'https://appvoices.org/2024/08/08/ann-rose-update/ '
+  },
   { title: 'REI Podcast Interview', source: 'REI Podcasts', url: '' },
-]
+  {
+    title: "Ann Rose, the 'River Warrior'",
+    source: 'Ashe Post & Times',
+    url: 'https://www.ashepostandtimes.com/community/ann-rose-the-river-warrior/article_f63b6bee-578a-11ef-9adf-57ead202cb1a.html?fbclid=PAQ0xDSwKjgh5leHRuA2FlbQIxMQABp7YY_b5qRAmH-ggaB0qSElA2o2H4NiNDkcdNLJTJxs7miZ8-BrG8VAed1VM1_aem_7ixEHbmR1H6MNlX2Lut4qQ'
+  },
+  {
+    title: 'Ann Rose Send Off',
+    source: 'New River Conservancy',
+    url: 'https://newriverconservancy.org/event/ann-rose-send-off/'
+  }
+];
 
 const stills = [
   '/images/press1.jpg',
@@ -13,8 +35,8 @@ const stills = [
   '/images/press4.jpg',
   '/images/press6.jpg',
   '/images/press7.jpg',
-  '/images/press8.jpg',
-]
+  '/images/press8.jpg'
+];
 </script>
 
 <template>
@@ -29,7 +51,10 @@ const stills = [
       <div class="press-container">
         <h2 class="section-title">In the News</h2>
         <div class="press-cards">
-          <div v-for="(item, index) in pressItems" :key="index" class="press-card">
+          <div
+            v-for="(item, index) in pressItems"
+            :key="index"
+            class="press-card">
             <a :href="item.url" rel="noopener noreferrer" target="_blank">
               <h3 class="press-title">{{ item.title }}</h3>
               <p class="press-source">{{ item.source }}</p>
@@ -47,7 +72,7 @@ const stills = [
             v-for="(still, index) in stills"
             :key="index"
             alt="Documentary still"
-            :src="still"/>
+            :src="still" />
         </div>
       </div>
     </section>
@@ -147,7 +172,9 @@ const stills = [
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .press-card:hover {
