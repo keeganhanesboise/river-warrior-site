@@ -34,25 +34,31 @@ const impactItems = [
 
     <section class="water-quality-section">
       <div class="water-quality-container">
-        <h2 class="water-quality-title">Water Quality Testing</h2>
-        <p class="water-quality-description">
-          The term Water awareness sounds so obvious, and I think that's why I
-          never spent much time dwelling on it, But seeing Ann's passion for
-          Water quality and her devotion to making people aware of what that
-          term actually means, made me realize I couldn't even put the term in a
-          solid definition. This trip on the river and seeing first hand all the
-          contributions to our declining water quality made me SEE what water
-          awareness is, instead of just hearing the words. I hope this film will
-          also bring the reality of the term "water awareness" into people's
-          lives by SEEING what we saw.
-        </p>
-        <a
-          class="water-quality-link"
-          href="https://www.amazon.com/dp/B0CX58SCG6?ref=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&ref_=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&social_share=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&titleSource=avft-a&previewDoh=1&previewDohDeal=1"
-          rel="noopener noreferrer"
-          target="_blank">
-          Explore Ann's Testing Tool →
-        </a>
+        <div class="water-quality-content">
+          <h2 class="water-quality-title">Water Quality Testing</h2>
+          <p class="water-quality-description">
+            The term Water awareness sounds so obvious, and I think that's why I
+            never spent much time dwelling on it, But seeing Ann's passion for
+            Water quality and her devotion to making people aware of what that
+            term actually means, made me realize I couldn't even put the term in
+            a solid definition. This trip on the river and seeing first hand all
+            the contributions to our declining water quality made me SEE what
+            water awareness is, instead of just hearing the words. I hope this
+            film will also bring the reality of the term "water awareness" into
+            people's lives by SEEING what we saw.
+          </p>
+          <a
+            class="water-quality-link"
+            href="https://www.amazon.com/dp/B0CX58SCG6?ref=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&ref_=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&social_share=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&titleSource=avft-a&previewDoh=1&previewDohDeal=1"
+            rel="noopener noreferrer"
+            target="_blank">
+            Explore Ann's Testing Tool →
+          </a>
+        </div>
+        <img
+          alt="Ann conducting water quality testing"
+          class="water-quality-image"
+          src="/images/ann_water_quality_testing.jpg" />
       </div>
     </section>
 
@@ -222,9 +228,16 @@ const impactItems = [
 }
 
 .water-quality-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.water-quality-content {
+  text-align: left;
 }
 
 .water-quality-title {
@@ -238,6 +251,14 @@ const impactItems = [
   line-height: 1.6;
   margin: 0 0 2rem 0;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.water-quality-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .water-quality-link {
@@ -259,6 +280,15 @@ const impactItems = [
 @media (min-width: 768px) {
   .water-quality-section {
     padding: 6rem 2rem;
+  }
+
+  .water-quality-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .water-quality-image {
+    height: 500px;
   }
 }
 </style>
