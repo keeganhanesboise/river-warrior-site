@@ -84,6 +84,7 @@ onUnmounted(() => {
   position: fixed;
   top: 1rem;
   right: 1rem;
+  font-size: 1.5rem;
   background: none;
   border: none;
   color: white;
