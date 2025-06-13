@@ -21,7 +21,7 @@ const impactItems = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     link: '/'
   }
-]
+];
 </script>
 
 <template>
@@ -32,9 +32,36 @@ const impactItems = [
       <h1 class="hero-title">Impact</h1>
     </section>
 
+    <section class="water-quality-section">
+      <div class="water-quality-container">
+        <h2 class="water-quality-title">Water Quality Testing</h2>
+        <p class="water-quality-description">
+          The term Water awareness sounds so obvious, and I think that's why I
+          never spent much time dwelling on it, But seeing Ann's passion for
+          Water quality and her devotion to making people aware of what that
+          term actually means, made me realize I couldn't even put the term in a
+          solid definition. This trip on the river and seeing first hand all the
+          contributions to our declining water quality made me SEE what water
+          awareness is, instead of just hearing the words. I hope this film will
+          also bring the reality of the term "water awareness" into people's
+          lives by SEEING what we saw.
+        </p>
+        <a
+          class="water-quality-link"
+          href="https://www.amazon.com/dp/B0CX58SCG6?ref=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&ref_=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&social_share=cm_sw_r_apin_dp_90TK2QMSBD8ZM7FGM9FQ_1&titleSource=avft-a&previewDoh=1&previewDohDeal=1"
+          rel="noopener noreferrer"
+          target="_blank">
+          Explore Ann's Testing Tool →
+        </a>
+      </div>
+    </section>
+
     <section class="impact-section">
       <div class="impact-container">
-        <div v-for="(item, index) in impactItems" :key="index" class="impact-item">
+        <div
+          v-for="(item, index) in impactItems"
+          :key="index"
+          class="impact-item">
           <div class="icon-container">
             <img alt="" class="impact-icon" :src="item.icon" />
           </div>
@@ -95,7 +122,6 @@ const impactItems = [
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
 }
 
 .impact-container {
@@ -187,5 +213,52 @@ const impactItems = [
 }
 .impact-link:hover {
   color: #a8d4bc;
+}
+
+.water-quality-section {
+  background-color: #1e3a2f;
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.water-quality-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.water-quality-title {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem 0;
+  color: white;
+}
+
+.water-quality-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.water-quality-link {
+  display: inline-block;
+  font-size: 1.125rem;
+  color: #a8d4bc;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #a8d4bc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.water-quality-link:hover {
+  background-color: #a8d4bc;
+  color: #1e3a2f;
+}
+
+@media (min-width: 768px) {
+  .water-quality-section {
+    padding: 6rem 2rem;
+  }
 }
 </style>
