@@ -8,17 +8,52 @@ interface StorySection {
 const sections: StorySection[] = [
   {
     title: 'A Journey by Water',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    text:
+      '<em>River Warrior</em> is the story of one woman’s journey into the heart of America’s' +
+      ' water sheds—1,895 miles powered by nothing but a paddle, peddles, determination,' +
+      ' and the belief that water is worth fighting for. In July 2024, Ann Rose launched ' +
+      'her kayak into a creek near her farm and began her journey from the Appalachian ' +
+      'Mountains to the Gulf of Mexico. Along the way, she passed through the living ' +
+      'veins of the country—rivers that nourish towns, farms, and ecosystems, but are ' +
+      'too often neglected or threatened. This journey wasn’t just about endurance—it was ' +
+      'about honoring the rivers and raising awareness for the need to protect them.',
     image: '/images/kayak_splash.jpg'
   },
   {
     title: 'From Appalachia to the Gulf',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    text:
+      '<ul><li>Beginning in the highland headwaters of Lansing, North Carolina, Ann followed ' +
+      'the current south—paddling through rapids, lock and dam systems, barges, industrial ' +
+      'zones, and backwater bayous, across four major rivers and countless tributaries. She' +
+      ' traveled in rhythm with the water, learning from it, battling it, and listening to ' +
+      'what it had to say.\n</li>' +
+      '<li>Her journey began on the <strong>New River</strong>, one of the oldest rivers in the world, winding ' +
+      'through the Appalachian Mountains with ancient strength and resilience. From there, ' +
+      'she entered the <strong>Kanawha River</strong>, where the damage from coal mining and industry became ' +
+      'impossible to ignore. The <strong>Ohio River</strong> carried her further west, its wide, working ' +
+      'waters reflecting both the legacy of commerce and the burden of pollution. Finally, ' +
+      'she reached the <strong>Mississippi River</strong>, a force of nature as vast as it is complex—dangerous ' +
+      'and deeply symbolic of our national relationship with water.\n</li>' +
+      '<li>Ann’s journey ended on September 27th, 2024—just as Hurricane Helene ravaged her ' +
+      'hometown, forcing her to turn from river warrior to relief worker to help rebuild ' +
+      'what was lost. The contrast was stark but telling: while Ann had spent months tracing ' +
+      'the veins of our interconnected water systems, nature struck home with devastating ' +
+      'force—only deepening the urgency of her mission to raise awareness and protect ' +
+      'the waters that sustain us.</li></ul>',
     image: '/images/journey_map.jpg'
   },
   {
     title: 'Meet the Woman Behind the Paddle',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    text:
+      'Ann Rose is not your typical adventurer. A self-taught, off-grid farmer in the ' +
+      'mountains of Appalachia, she lives with deep intention on Rose Mountain Farm—a ' +
+      'homestead she built by hand, rooted in self-reliance and reverence for the land. ' +
+      'As a farmer, she deeply understands that clean, accessible water is the foundation ' +
+      'of life. It waters her crops, sustains her animals, and connects her farm to everything ' +
+      'downstream. That understanding fueled her decision to take to the river—not just for ' +
+      'personal discovery, but to speak on behalf of the watersheds that are too often overlooked. ' +
+      "<em>River Warrior</em> introduces audiences to a woman who doesn't just talk about change—she " +
+      'lives it, paddles it, and fights for it.',
     image: '/images/ann_portrait.jpg'
   }
 ];
@@ -90,7 +125,7 @@ onUnmounted(() => {
             :ref="(el) => (textRefs[index] = el as HTMLElement | null)"
             class="text-section">
             <h2 class="section-title">{{ section.title }}</h2>
-            <p class="section-text">{{ section.text }}</p>
+            <p class="section-text" v-html="section.text" />
           </div>
         </div>
         <div class="image-container">
@@ -114,7 +149,7 @@ onUnmounted(() => {
             :class="{ active: currentSection === index }">
             <div class="mobile-content">
               <h2 class="section-title">{{ section.title }}</h2>
-              <p class="section-text">{{ section.text }}</p>
+              <p class="section-text" v-html="section.text" />
               <div class="mobile-image">
                 <img alt="" class="section-image" :src="section.image" />
               </div>
