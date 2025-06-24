@@ -35,7 +35,7 @@ const socialLinks: FooterSocialIcon[] = [
         <img
           alt="River Warrior Paddle Icon"
           class="footer-logo"
-          src="/images/rw_paddle_icon.png" />
+          src="/images/rw_paddle_icon_white.png" />
       </div>
 
       <div class="footer-section links">
