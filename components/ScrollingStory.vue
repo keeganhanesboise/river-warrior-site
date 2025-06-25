@@ -22,24 +22,34 @@ const sections: StorySection[] = [
   {
     title: 'From Appalachia to the Gulf',
     text:
-      '<ul><li>Beginning in the highland headwaters of Lansing, North Carolina, Ann followed ' +
+      'Beginning in the highland headwaters of Lansing, North Carolina, Ann followed ' +
       'the current south—paddling through rapids, lock and dam systems, barges, industrial ' +
       'zones, and backwater bayous, across four major rivers and countless tributaries. She' +
       ' traveled in rhythm with the water, learning from it, battling it, and listening to ' +
-      'what it had to say.\n</li>' +
-      '<li>Her journey began on the <strong>New River</strong>, one of the oldest rivers in the world, winding ' +
+      'what it had to say.',
+    image: '/images/journey_map.jpg'
+  },
+  {
+    title: 'From Appalachia to the Gulf',
+    text:
+      'Her journey began on the <strong>New River</strong>, one of the oldest rivers in the world, winding ' +
       'through the Appalachian Mountains with ancient strength and resilience. From there, ' +
       'she entered the <strong>Kanawha River</strong>, where the damage from coal mining and industry became ' +
       'impossible to ignore. The <strong>Ohio River</strong> carried her further west, its wide, working ' +
       'waters reflecting both the legacy of commerce and the burden of pollution. Finally, ' +
       'she reached the <strong>Mississippi River</strong>, a force of nature as vast as it is complex—dangerous ' +
-      'and deeply symbolic of our national relationship with water.\n</li>' +
-      '<li>Ann’s journey ended on September 27th, 2024—just as Hurricane Helene ravaged her ' +
+      'and deeply symbolic of our national relationship with water.',
+    image: '/images/journey_map.jpg'
+  },
+  {
+    title: 'From Appalachia to the Gulf',
+    text:
+      'Ann’s journey ended on September 27th, 2024—just as Hurricane Helene ravaged her ' +
       'hometown, forcing her to turn from river warrior to relief worker to help rebuild ' +
       'what was lost. The contrast was stark but telling: while Ann had spent months tracing ' +
       'the veins of our interconnected water systems, nature struck home with devastating ' +
       'force—only deepening the urgency of her mission to raise awareness and protect ' +
-      'the waters that sustain us.</li></ul>',
+      'the waters that sustain us.',
     image: '/images/journey_map.jpg'
   },
   {
