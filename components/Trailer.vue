@@ -42,13 +42,13 @@
   text-align: center;
   color: white;
   margin-bottom: 3rem;
+  width: 100%;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .trailer-header {
-  font-size: 2.5rem;
   margin: 0 0 2rem;
   color: #a8d4bc;
   position: relative;
@@ -68,7 +68,6 @@
 }
 
 .logline {
-  font-size: 1.25rem;
   line-height: 1.6;
   margin: 0;
 }
@@ -96,25 +95,18 @@
   border-radius: 8px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 769px) {
   .video-container-primary {
     padding: 8rem 3rem;
   }
 
   .video-container-secondary {
-    width: 75%
-  }
-
-  .trailer-header {
-    font-size: 3.5rem;
-  }
-
-  .logline {
-    font-size: 1.5rem;
+    width: 75%;
   }
 
   .text-content {
     margin-bottom: 4rem;
+    width: 75%;
   }
 }
 </style>
