@@ -298,7 +298,6 @@ onUnmounted(() => {
   .mobile-section {
     position: absolute;
     width: 100%;
-    height: 100%;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease-out;
