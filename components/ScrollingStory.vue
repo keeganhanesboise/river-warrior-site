@@ -318,7 +318,8 @@ onUnmounted(() => {
     justify-content: center;
     text-align: center;
     height: 100%;
-    padding: 2rem;
+    padding: 1rem;
+    overflow-y: auto;
   }
 
   .section-title {
@@ -332,22 +333,25 @@ onUnmounted(() => {
   }
 
   .section-text {
-    font-size: 1.125rem;
-    max-width: 600px;
+    font-size: 0.95rem;
+    max-width: 500px;
+    max-height: 35vh;
+    overflow: auto;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
   }
 
   .mobile-image {
-    width: 100%;
-    max-width: 500px;
-    height: 40vh;
+    max-width: 350px;
+    height: 35vh;
+    margin: 0 auto;
   }
 
   .mobile-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 </style>
