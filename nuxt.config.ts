@@ -3,14 +3,27 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   css: ['~/assets/css/main.css', '~/assets/css/fonts.css'],
   devtools: { enabled: true },
+
+  // Enable SSR to allow static image generation
   ssr: true,
+
+  modules: ['@nuxt/image-edge'],
+
+  // Use static preset for static site generation
   nitro: {
-    preset: 'netlify'
+    preset: 'static'
   },
-  modules: ['@nuxt/image'],
+
   image: {
-    dir: 'public'
+    dir: 'public',
+    screens: {
+      sm: 320,
+      md: 640,
+      lg: 1024,
+      xl: 1280
+    }
   },
+
   app: {
     head: {
       htmlAttrs: {
