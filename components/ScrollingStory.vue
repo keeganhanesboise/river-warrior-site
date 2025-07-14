@@ -282,6 +282,9 @@ onUnmounted(() => {
   max-height: 80vh;
   object-fit: cover;
   border-radius: 8px;
+  aspect-ratio: 3/4;
+  width: 100%;
+  height: auto;
 }
 
 /* Mobile Styles */
