@@ -37,7 +37,13 @@ function handleVisibilityChange() {
 
 const videoError = ref(false);
 function handleVideoError() {
-  videoError.value = true;
+  // Only show fallback if the video truly failed to load after a small delay
+  setTimeout(() => {
+    const video = document.querySelector('.hero-video');
+    if (video && video.readyState === 0) {
+      videoError.value = true;
+    }
+  }, 2000); // 2-second delay to avoid brief network hiccups
 }
 
 onMounted(() => {
