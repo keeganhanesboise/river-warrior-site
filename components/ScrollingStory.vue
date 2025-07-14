@@ -2,7 +2,8 @@
 interface StorySection {
   title: string;
   text: string;
-  image: string;
+  image?: string;
+  video?: string;
 }
 
 const sections: StorySection[] = [
@@ -27,7 +28,7 @@ const sections: StorySection[] = [
       'zones, and backwater bayous, across four major rivers and countless tributaries. She' +
       ' traveled in rhythm with the water, learning from it, battling it, and listening to ' +
       'what it had to say.',
-    image: '/images/journey_map.jpg'
+    image: '/images/map-animation-still.jpg'
   },
   {
     title: 'From Appalachia to the Gulf',
@@ -39,7 +40,7 @@ const sections: StorySection[] = [
       'waters reflecting both the legacy of commerce and the burden of pollution. Finally, ' +
       'she reached the <strong>Mississippi River</strong>, a force of nature as vast as it is complex—dangerous ' +
       'and deeply symbolic of our national relationship with water.',
-    image: '/images/journey_map.jpg'
+    video: '/videos/map-animation-2.mp4'
   },
   {
     title: 'From Appalachia to the Gulf',
@@ -50,7 +51,7 @@ const sections: StorySection[] = [
       'the veins of our interconnected water systems, nature struck home with devastating ' +
       'force—only deepening the urgency of her mission to raise awareness and protect ' +
       'the waters that sustain us.',
-    image: '/images/journey_map.jpg'
+    video: '/videos/map-animation-3.mp4'
   },
   {
     title: 'Meet the Woman Behind the Paddle',
@@ -144,7 +145,20 @@ onUnmounted(() => {
             :key="index"
             class="image-wrapper"
             :class="{ active: currentSection === index }">
-            <img alt="" class="section-image" :src="section.image" />
+            <img
+              v-if="section.image"
+              alt=""
+              class="section-image"
+              :src="section.image" />
+            <video
+              v-if="section.video"
+              ref="el => videoRefs.value[index] = el as HTMLVideoElement | null"
+              autoplay
+              class="section-image"
+              loop
+              muted
+              playsinline
+              :src="section.video" />
           </div>
         </div>
       </div>
@@ -161,7 +175,19 @@ onUnmounted(() => {
               <h2 class="section-title">{{ section.title }}</h2>
               <p class="section-text" v-html="section.text" />
               <div class="mobile-image">
-                <img alt="" class="section-image" :src="section.image" />
+                <img
+                  v-if="section.image"
+                  alt=""
+                  class="section-image"
+                  :src="section.image" />
+                <video
+                  v-if="section.video"
+                  autoplay
+                  class="section-image"
+                  loop
+                  muted
+                  playsinline
+                  :src="section.video" />
               </div>
             </div>
           </div>
