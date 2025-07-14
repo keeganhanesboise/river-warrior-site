@@ -32,7 +32,7 @@ const socialLinks: FooterSocialIcon[] = [
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-section brand">
-        <img
+        <NuxtImg
           alt="River Warrior Paddle Icon"
           class="footer-logo"
           src="/images/rw_paddle_icon_white.png" />
@@ -60,7 +60,7 @@ const socialLinks: FooterSocialIcon[] = [
             :href="social.url"
             rel="noopener noreferrer"
             target="_blank">
-            <img
+            <NuxtImg
               alt="Documentary Instagram Page"
               class="social-icon"
               :src="social.icon" />

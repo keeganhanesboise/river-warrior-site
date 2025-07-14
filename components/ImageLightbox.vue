@@ -46,7 +46,7 @@ onUnmounted(() => {
       x
     </button>
     <div class="lightbox-content">
-      <img alt="" :src="imageSrc" />
+      <NuxtImg alt="" :src="imageSrc" />
     </div>
   </div>
 </template>

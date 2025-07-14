@@ -49,7 +49,7 @@ const crewMembers: CrewMember[] = [
 <template>
   <main>
     <section class="hero">
-      <img alt="" class="hero-image" src="/images/camera_crew.jpg" />
+      <NuxtImg alt="" class="hero-image" src="/images/camera_crew.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Crew</h1>
     </section>
@@ -58,7 +58,7 @@ const crewMembers: CrewMember[] = [
       <div class="member-container">
         <div v-for="(member, index) in crewMembers" :key="index" class="member">
           <div class="headshot-container">
-            <img alt="" class="headshot" :src="member.image" />
+            <NuxtImg alt="" class="headshot" :src="member.image" />
           </div>
           <div class="member-info">
             <h2 class="member-name">{{ member.name }}</h2>

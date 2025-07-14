@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="hero">
-      <img alt="" class="hero-image" src="/images/water_quality.jpg" />
+      <NuxtImg alt="" class="hero-image" src="/images/water_quality.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Impact</h1>
     </section>
@@ -25,7 +25,7 @@
             urgent call to see, understand, and act.
           </p>
         </div>
-        <img
+        <NuxtImg
           alt="Ann conducting water quality testing"
           class="water-quality-image"
           src="/images/ann_water_quality_testing.jpg" />
@@ -36,7 +36,7 @@
       <div class="impact-container">
         <div class="impact-item">
           <div class="icon-container">
-            <img
+            <NuxtImg
               alt=""
               class="impact-icon"
               src="/images/on_the_ground_water_testing.png" />
@@ -62,7 +62,7 @@
         </div>
         <div class="impact-item">
           <div class="icon-container">
-            <img
+            <NuxtImg
               alt=""
               class="impact-icon"
               src="/images/what_it_measures.png" />
@@ -124,7 +124,7 @@
         </div>
         <div class="impact-item">
           <div class="icon-container">
-            <img alt="" class="impact-icon" src="/images/why_it_matters.png" />
+            <NuxtImg alt="" class="impact-icon" src="/images/why_it_matters.png" />
           </div>
           <div class="impact-content">
             <h2 class="impact-title">Why It Matters</h2>
@@ -156,7 +156,7 @@
         </div>
         <div class="impact-item">
           <div class="icon-container">
-            <img
+            <NuxtImg
               alt=""
               class="impact-icon"
               src="/images/take_action_for_our_rivers.png" />

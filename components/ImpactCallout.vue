@@ -2,7 +2,7 @@
   <section class="impact-callout-section">
     <div class="impact-callout-container">
       <div class="impact-callout-image-wrapper">
-        <img
+        <NuxtImg
           alt="Ann conducting water quality testing"
           class="impact-callout-image"
           src="/images/ann_water_quality_testing.jpg" />

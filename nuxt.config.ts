@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/fonts.css'],
   devtools: { enabled: true },
   ssr: true,
+  modules: ['@nuxt/image'],
+  image: {
+    dir: 'public'
+  },
   app: {
     head: {
       htmlAttrs: {

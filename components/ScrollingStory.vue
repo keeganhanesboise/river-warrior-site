@@ -145,7 +145,7 @@ onUnmounted(() => {
             :key="index"
             class="image-wrapper"
             :class="{ active: currentSection === index }">
-            <img
+            <NuxtImg
               v-if="section.image"
               alt=""
               class="section-image"
@@ -175,7 +175,7 @@ onUnmounted(() => {
               <h2 class="section-title">{{ section.title }}</h2>
               <p class="section-text" v-html="section.text" />
               <div class="mobile-image">
-                <img
+                <NuxtImg
                   v-if="section.image"
                   alt=""
                   class="section-image"

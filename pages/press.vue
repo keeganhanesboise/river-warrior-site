@@ -90,7 +90,7 @@ const closeLightbox = () => {
 <template>
   <main>
     <section class="hero">
-      <img alt="" class="hero-image" src="/images/press5.jpg" />
+      <NuxtImg alt="" class="hero-image" src="/images/press5.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Press</h1>
     </section>
@@ -130,7 +130,7 @@ const closeLightbox = () => {
             tabindex="0"
             @click="openLightbox(still)"
             @keydown.enter="openLightbox(still)">
-            <img alt="" :src="still" />
+            <NuxtImg alt="" :src="still" />
           </div>
         </div>
         <button

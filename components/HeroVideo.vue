@@ -21,7 +21,7 @@
     <div class="hero-content">
       <div class="logo-container fade-in">
         <h1 class="sr-only">River Warrior Documentary</h1>
-        <img id="logo" alt="" src="/images/logo_white.png" />
+        <NuxtImg id="logo" alt="" src="/images/logo_white.png" />
       </div>
     </div>
 
