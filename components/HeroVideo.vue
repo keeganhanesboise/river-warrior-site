@@ -1,6 +1,4 @@
 <script setup>
-import { onBeforeUnmount, onMounted } from 'vue';
-
 function setVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -37,12 +35,36 @@ function handleVisibilityChange() {
   }
 }
 
+const videoError = ref(false);
+function handleVideoError() {
+  videoError.value = true;
+}
+
 onMounted(() => {
+  setVh();
+  window.addEventListener('resize', setVh);
+  window.addEventListener('orientationchange', setVh);
+
+  const video = document.querySelector('.hero-video');
+  if (video) {
+    video.addEventListener('error', handleVideoError);
+    video.addEventListener('stalled', handleVideoError);
+  }
+
   window.addEventListener('pageshow', handlePageShow);
   document.addEventListener('visibilitychange', handleVisibilityChange);
 });
 
 onBeforeUnmount(() => {
+  window.removeEventListener('resize', setVh);
+  window.removeEventListener('orientationchange', setVh);
+
+  const video = document.querySelector('.hero-video');
+  if (video) {
+    video.removeEventListener('error', handleVideoError);
+    video.removeEventListener('stalled', handleVideoError);
+  }
+
   window.removeEventListener('pageshow', handlePageShow);
   document.removeEventListener('visibilitychange', handleVisibilityChange);
 });
@@ -51,6 +73,7 @@ onBeforeUnmount(() => {
 <template>
   <section class="hero-section">
     <video
+      v-if="!videoError"
       autoplay
       class="hero-video"
       loop
@@ -62,6 +85,20 @@ onBeforeUnmount(() => {
       <source src="/videos/hero-video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    <img
+      v-else
+      alt="Hero video fallback"
+      class="hero-video-fallback"
+      src="/videos/hero-video-poster.jpg"
+      style="
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      " />
 
     <div class="overlay" />
     <div class="bottom-gradient" />
