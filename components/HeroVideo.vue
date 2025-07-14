@@ -51,11 +51,14 @@ onMounted(() => {
   window.addEventListener('resize', setVh);
   window.addEventListener('orientationchange', setVh);
 
-  const video = document.querySelector('.hero-video');
-  if (video) {
-    video.addEventListener('error', handleVideoError);
-    video.addEventListener('stalled', handleVideoError);
-  }
+  // Give the video element time to properly initialize after navigation
+  setTimeout(() => {
+    const video = document.querySelector('.hero-video');
+    if (video) {
+      video.addEventListener('error', handleVideoError);
+      video.addEventListener('stalled', handleVideoError);
+    }
+  }, 100);
 
   window.addEventListener('pageshow', handlePageShow);
   document.addEventListener('visibilitychange', handleVisibilityChange);
