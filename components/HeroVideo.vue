@@ -19,7 +19,10 @@ function restartVideo() {
   const video = document.querySelector('.hero-video');
   if (video) {
     video.load();
-    video.play().catch(() => {});
+    // Force play after a short delay
+    setTimeout(() => {
+      video.play().catch(() => {});
+    }, 100);
   }
 }
 
@@ -78,6 +81,11 @@ onMounted(() => {
       }, 1000);
     }
   }
+
+  // Force video restart on mount (especially after navigation)
+  setTimeout(() => {
+    restartVideo();
+  }, 200);
 
   window.addEventListener('pageshow', handlePageShow);
   document.addEventListener('visibilitychange', handleVisibilityChange);
