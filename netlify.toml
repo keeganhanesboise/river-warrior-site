@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
+  publish = ".output/dist"
   functions = ".netlify/functions"
 
 # Redirect all requests to the Nuxt app for client-side routing
