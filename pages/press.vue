@@ -225,12 +225,6 @@ const closeLightbox = () => {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 768px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-}
-
 .press-cards {
   display: grid;
   grid-template-columns: 1fr;

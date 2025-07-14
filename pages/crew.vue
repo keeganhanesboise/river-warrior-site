@@ -176,10 +176,6 @@ const crewMembers: CrewMember[] = [
     text-align: justify;
   }
 
-  .hero-title {
-    font-size: 3.5rem;
-  }
-
   .crew-members {
     padding: 4rem 2rem;
   }

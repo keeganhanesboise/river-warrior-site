@@ -124,7 +124,10 @@
         </div>
         <div class="impact-item">
           <div class="icon-container">
-            <NuxtImg alt="" class="impact-icon" src="/images/why_it_matters.png" />
+            <NuxtImg
+              alt=""
+              class="impact-icon"
+              src="/images/why_it_matters.png" />
           </div>
           <div class="impact-content">
             <h2 class="impact-title">Why It Matters</h2>
@@ -312,6 +315,7 @@
   position: relative;
   z-index: 2;
   color: white;
+  font-size: 3.5rem;
   text-align: center;
   margin: 0;
   padding: 0 1rem;

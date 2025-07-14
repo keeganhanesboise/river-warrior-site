@@ -1,3 +1,37 @@
+<script setup>
+import { onBeforeUnmount, onMounted } from 'vue';
+
+function restartVideo() {
+  const video = document.querySelector('.hero-video');
+  if (video) {
+    video.load();
+    video.play().catch(() => {});
+  }
+}
+
+function handlePageShow(event) {
+  if (event.persisted) {
+    restartVideo();
+  }
+}
+
+function handleVisibilityChange() {
+  if (!document.hidden) {
+    restartVideo();
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('pageshow', handlePageShow);
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('pageshow', handlePageShow);
+  document.removeEventListener('visibilitychange', handleVisibilityChange);
+});
+</script>
+
 <template>
   <section class="hero-section">
     <video
@@ -63,13 +97,6 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-}
-
-.hero-video-fallback {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
 }
 
 .overlay {
