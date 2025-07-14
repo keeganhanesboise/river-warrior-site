@@ -51,14 +51,21 @@ onMounted(() => {
   window.addEventListener('resize', setVh);
   window.addEventListener('orientationchange', setVh);
 
-  // Give the video element time to properly initialize after navigation
-  setTimeout(() => {
-    const video = document.querySelector('.hero-video');
-    if (video) {
-      video.addEventListener('error', handleVideoError);
-      video.addEventListener('stalled', handleVideoError);
+  const video = document.querySelector('.hero-video');
+  if (video) {
+    video.addEventListener('error', handleVideoError);
+    video.addEventListener('stalled', handleVideoError);
+    
+    // Check if video is already in a failed state on mount (common after navigation)
+    if (video.readyState === 0) {
+      // Give it a moment to try loading, then check again
+      setTimeout(() => {
+        if (video.readyState === 0) {
+          videoError.value = true;
+        }
+      }, 1000);
     }
-  }, 100);
+  }
 
   window.addEventListener('pageshow', handlePageShow);
   document.addEventListener('visibilitychange', handleVisibilityChange);
