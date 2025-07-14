@@ -17,17 +17,24 @@ onBeforeUnmount(() => {
 
 function restartVideo() {
   const video = document.querySelector('.hero-video');
-  if (video) {
-    video.load();
-    // Force play after a short delay
-    setTimeout(() => {
-      video.play().catch(() => {});
-    }, 100);
+  if (video && !hasRestarted.value) {
+    hasRestarted.value = true;
+    isRestarting.value = true;
+    videoLoading.value = true;
+    if (video) {
+      video.load();
+      // Force play after a short delay
+      setTimeout(() => {
+        video.play().catch(() => {});
+      }, 100);
+    }
   }
 }
 
 function handlePageShow(event) {
   if (event.persisted) {
+    // Reset the restart flag for new navigation
+    hasRestarted.value = false;
     restartVideo();
   }
 }
@@ -40,6 +47,8 @@ function handleVisibilityChange() {
 
 const videoError = ref(false);
 const videoLoading = ref(true);
+const hasRestarted = ref(false);
+const isRestarting = ref(false);
 
 function handleVideoError() {
   // Only show fallback if the video truly failed to load after a small delay
@@ -53,6 +62,7 @@ function handleVideoError() {
 
 function handleVideoPlay() {
   videoLoading.value = false;
+  isRestarting.value = false;
 }
 
 function handleVideoLoadStart() {
@@ -70,7 +80,7 @@ onMounted(() => {
     video.addEventListener('stalled', handleVideoError);
     video.addEventListener('play', handleVideoPlay);
     video.addEventListener('loadstart', handleVideoLoadStart);
-
+    
     // Check if video is already in a failed state on mount (common after navigation)
     if (video.readyState === 0) {
       // Give it a moment to try loading, then check again
@@ -81,11 +91,6 @@ onMounted(() => {
       }, 1000);
     }
   }
-
-  // Force video restart on mount (especially after navigation)
-  setTimeout(() => {
-    restartVideo();
-  }, 200);
 
   window.addEventListener('pageshow', handlePageShow);
   document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -110,9 +115,9 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="hero-section">
-    <!-- Background poster that shows while video loads -->
+    <!-- Background poster that shows while video loads or restarts -->
     <img
-      v-if="videoLoading && !videoError"
+      v-if="(videoLoading || isRestarting) && !videoError"
       alt=""
       class="hero-video-poster"
       src="/videos/hero-video-poster.jpg"
