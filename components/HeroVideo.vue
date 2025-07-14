@@ -36,6 +36,8 @@ function handleVisibilityChange() {
 }
 
 const videoError = ref(false);
+const videoLoading = ref(true);
+
 function handleVideoError() {
   // Only show fallback if the video truly failed to load after a small delay
   setTimeout(() => {
@@ -44,6 +46,14 @@ function handleVideoError() {
       videoError.value = true;
     }
   }, 2000); // 2-second delay to avoid brief network hiccups
+}
+
+function handleVideoPlay() {
+  videoLoading.value = false;
+}
+
+function handleVideoLoadStart() {
+  videoLoading.value = true;
 }
 
 onMounted(() => {
@@ -55,7 +65,9 @@ onMounted(() => {
   if (video) {
     video.addEventListener('error', handleVideoError);
     video.addEventListener('stalled', handleVideoError);
-    
+    video.addEventListener('play', handleVideoPlay);
+    video.addEventListener('loadstart', handleVideoLoadStart);
+
     // Check if video is already in a failed state on mount (common after navigation)
     if (video.readyState === 0) {
       // Give it a moment to try loading, then check again
@@ -79,6 +91,8 @@ onBeforeUnmount(() => {
   if (video) {
     video.removeEventListener('error', handleVideoError);
     video.removeEventListener('stalled', handleVideoError);
+    video.removeEventListener('play', handleVideoPlay);
+    video.removeEventListener('loadstart', handleVideoLoadStart);
   }
 
   window.removeEventListener('pageshow', handlePageShow);
@@ -88,6 +102,22 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="hero-section">
+    <!-- Background poster that shows while video loads -->
+    <img
+      v-if="videoLoading && !videoError"
+      alt=""
+      class="hero-video-poster"
+      src="/videos/hero-video-poster.jpg"
+      style="
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      " />
+
     <video
       v-if="!videoError"
       autoplay
