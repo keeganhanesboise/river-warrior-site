@@ -201,7 +201,7 @@ onUnmounted(() => {
 #story-section {
   background-color: #f5f5f0;
   min-height: 200vh;
-  padding: 5rem 2rem;
+  padding: 5rem 2rem 0;
   position: relative;
 }
 
@@ -291,7 +291,7 @@ onUnmounted(() => {
 
 @media (min-width: 640px) {
   #story-section {
-    padding: 5rem 3rem;
+    padding: 5rem 3rem 0;
   }
 }
 
@@ -374,6 +374,12 @@ onUnmounted(() => {
   }
 
   .mobile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .mobile-image video {
     width: 100%;
     height: 100%;
     object-fit: contain;

@@ -164,7 +164,7 @@ const crewMembers: CrewMember[] = [
 }
 
 .member-bio {
-  text-align: justify;
+  text-align: center;
   font-size: 1.125rem;
   line-height: 1.6;
   margin: 0;
@@ -172,6 +172,10 @@ const crewMembers: CrewMember[] = [
 }
 
 @media (min-width: 768px) {
+  .member-bio {
+    text-align: justify;
+  }
+
   .hero-title {
     font-size: 3.5rem;
   }

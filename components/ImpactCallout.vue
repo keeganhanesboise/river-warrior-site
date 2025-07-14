@@ -97,6 +97,9 @@
 }
 
 @media (min-width: 900px) {
+  .impact-callout-section {
+    padding: 0 2rem 10rem;
+  }
   .impact-callout-container {
     flex-direction: row;
     gap: 3.5rem;
