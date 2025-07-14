@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/fonts.css'],
   devtools: { enabled: true },
   ssr: true,
+  nitro: {
+    preset: 'netlify'
+  },
   modules: ['@nuxt/image'],
   image: {
     dir: 'public'
