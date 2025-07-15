@@ -1,4 +1,9 @@
 <script setup>
+import { useRoute } from 'vue-router';
+
+const video = ref(null);
+const route = useRoute();
+
 function setVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -8,6 +13,7 @@ onMounted(() => {
   setVh();
   window.addEventListener('resize', setVh);
   window.addEventListener('orientationchange', setVh);
+  video.value?.play().catch(() => {});
 });
 
 onBeforeUnmount(() => {
@@ -15,11 +21,21 @@ onBeforeUnmount(() => {
   window.removeEventListener('orientationchange', setVh);
 });
 
+watch(
+  () => route.path,
+  (newPath) => {
+    if (newPath !== '/') {
+      video.value?.pause();
+    } else {
+      video.value?.play().catch(() => {});
+    }
+  }
+);
+
 function restartVideo() {
-  const video = document.querySelector('.hero-video');
-  if (video) {
-    video.load();
-    video.play().catch(() => {});
+  if (video.value) {
+    video.value.load();
+    video.value.play().catch(() => {});
   }
 }
 
@@ -49,6 +65,7 @@ onBeforeUnmount(() => {
 <template>
   <section class="hero-section">
     <video
+      ref="video"
       autoplay
       class="hero-video"
       loop

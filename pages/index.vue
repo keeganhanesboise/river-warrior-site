@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <section>
     <HeroVideo />
     <Trailer />
     <ScrollingStory />
     <ImpactCallout />
     <SiteFooter />
-  </main>
+  </section>
 </template>
