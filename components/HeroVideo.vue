@@ -90,6 +90,12 @@ onMounted(() => {
   overflow: hidden;
 }
 
+@supports (height: 100svh) {
+  .hero-section {
+    height: 100svh;
+  }
+}
+
 .hero-video {
   position: absolute;
   top: 0;
@@ -154,7 +160,6 @@ onMounted(() => {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -167,6 +172,7 @@ onMounted(() => {
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
   animation-delay: 1.5s;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem);
 }
 
 .scroll-text {
