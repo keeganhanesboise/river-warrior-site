@@ -6,6 +6,14 @@ const heroVideo = ref(null);
 onMounted(() => {
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
+  const videoEl = heroVideo.value;
+
+  // Set mobile or desktop poster
+  videoEl.poster = isMobile
+    ? '/videos/hero-video-mobile-poster.jpg'
+    : '/videos/hero-video-poster.jpg';
+
+  // Set video sources based on device
   const sources = isMobile
     ? [{ src: '/videos/hero-video-mobile.mp4', type: 'video/mp4' }]
     : [
@@ -13,14 +21,10 @@ onMounted(() => {
         { src: '/videos/hero-video.mp4', type: 'video/mp4' }
       ];
 
-  const videoEl = heroVideo.value;
-
-  // Remove any existing <source> tags (if hydration injected anything)
   while (videoEl.firstChild) {
     videoEl.removeChild(videoEl.firstChild);
   }
 
-  // Append new <source> tags
   sources.forEach(({ src, type }) => {
     const source = document.createElement('source');
     source.src = src;
@@ -28,7 +32,6 @@ onMounted(() => {
     videoEl.appendChild(source);
   });
 
-  // Reload video with new sources
   videoEl.load();
 });
 </script>
