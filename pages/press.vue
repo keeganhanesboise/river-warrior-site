@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/_ipx/_/images/press5.jpg' }]
+  link: [{ rel: 'preload', as: 'image', href: '/_ipx/_/images/press-hero.jpg' }]
 });
 const pressItems = [
   {
@@ -97,7 +97,7 @@ const closeLightbox = () => {
         alt=""
         class="hero-image"
         loading="eager"
-        src="/images/press5.jpg" />
+        src="/images/press-hero.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Press</h1>
     </section>
