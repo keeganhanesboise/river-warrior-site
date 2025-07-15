@@ -1,4 +1,7 @@
 <script setup lang="ts">
+useHead({
+  link: [{ rel: 'preload', as: 'image', href: '/_ipx/_/images/camera_crew.jpg' }]
+});
 interface CrewMember {
   name: string;
   title: string;
@@ -49,7 +52,11 @@ const crewMembers: CrewMember[] = [
 <template>
   <main>
     <section class="hero">
-      <NuxtImg alt="" class="hero-image" src="/images/camera_crew.jpg" />
+      <NuxtImg
+        alt=""
+        class="hero-image"
+        loading="eager"
+        src="/images/camera_crew.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Crew</h1>
     </section>

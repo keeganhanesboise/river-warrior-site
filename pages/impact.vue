@@ -1,7 +1,17 @@
+<script setup lang="ts">
+useHead({
+  link: [{ rel: 'preload', as: 'image', href: '/_ipx/_/images/water_quality.jpg' }]
+});
+</script>
+
 <template>
   <main>
     <section class="hero">
-      <NuxtImg alt="" class="hero-image" src="/images/water_quality.jpg" />
+      <NuxtImg
+        alt=""
+        class="hero-image"
+        loading="eager"
+        src="/images/water_quality.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Impact</h1>
     </section>
