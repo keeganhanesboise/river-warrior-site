@@ -1,95 +1,27 @@
-<script setup>
-import { useRoute } from 'vue-router';
-
-const video = ref(null);
-const route = useRoute();
-
-function setVh() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-onMounted(() => {
-  setVh();
-  window.addEventListener('resize', setVh);
-  window.addEventListener('orientationchange', setVh);
-  video.value?.play().catch(() => {});
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', setVh);
-  window.removeEventListener('orientationchange', setVh);
-});
-
-watch(
-  () => route.path,
-  (newPath) => {
-    if (newPath !== '/') {
-      video.value?.pause();
-    } else {
-      video.value?.play().catch(() => {});
-    }
-  }
-);
-
-function restartVideo() {
-  if (video.value) {
-    video.value.load();
-    video.value.play().catch(() => {});
-  }
-}
-
-function handlePageShow(event) {
-  if (event.persisted) {
-    restartVideo();
-  }
-}
-
-function handleVisibilityChange() {
-  if (!document.hidden) {
-    restartVideo();
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('pageshow', handlePageShow);
-  document.addEventListener('visibilitychange', handleVisibilityChange);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('pageshow', handlePageShow);
-  document.removeEventListener('visibilitychange', handleVisibilityChange);
-});
-</script>
-
 <template>
   <section class="hero-section">
     <video
-      ref="video"
       autoplay
       class="hero-video"
       loop
       muted
       playsinline
       poster="/videos/hero-video-poster.jpg"
-      preload="auto">
+      preload="auto"
+      webkit-playsinline>
       <source src="/videos/hero-video.webm" type="video/webm" />
       <source src="/videos/hero-video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
     <div class="overlay" />
     <div class="bottom-gradient" />
-
     <MainNavigation />
-
     <div class="hero-content">
       <div class="logo-container fade-in">
         <h1 class="sr-only">River Warrior Documentary</h1>
         <NuxtImg id="logo" alt="" src="/images/logo_white.png" />
       </div>
     </div>
-
     <div class="scroll-indicator">
       <span class="scroll-text">Scroll to explore</span>
       <svg
@@ -108,7 +40,6 @@ onBeforeUnmount(() => {
   </section>
 </template>
 
-<!--suppress CssUnresolvedCustomProperty -->
 <style scoped>
 #logo {
   width: 100%;
@@ -119,12 +50,6 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    height: calc(var(--vh, 1vh) * 100);
-  }
 }
 
 .hero-video {
