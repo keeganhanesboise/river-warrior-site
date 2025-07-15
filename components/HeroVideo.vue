@@ -17,24 +17,14 @@ onBeforeUnmount(() => {
 
 function restartVideo() {
   const video = document.querySelector('.hero-video');
-  if (video && !hasRestarted.value) {
-    hasRestarted.value = true;
-    isRestarting.value = true;
-    videoLoading.value = true;
-    if (video) {
-      video.load();
-      // Force play after a short delay
-      setTimeout(() => {
-        video.play().catch(() => {});
-      }, 100);
-    }
+  if (video) {
+    video.load();
+    video.play().catch(() => {});
   }
 }
 
 function handlePageShow(event) {
   if (event.persisted) {
-    // Reset the restart flag for new navigation
-    hasRestarted.value = false;
     restartVideo();
   }
 }
@@ -45,69 +35,12 @@ function handleVisibilityChange() {
   }
 }
 
-const videoError = ref(false);
-const videoLoading = ref(true);
-const hasRestarted = ref(false);
-const isRestarting = ref(false);
-
-function handleVideoError() {
-  // Only show fallback if the video truly failed to load after a small delay
-  setTimeout(() => {
-    const video = document.querySelector('.hero-video');
-    if (video && video.readyState === 0) {
-      videoError.value = true;
-    }
-  }, 2000); // 2-second delay to avoid brief network hiccups
-}
-
-function handleVideoPlay() {
-  videoLoading.value = false;
-  isRestarting.value = false;
-}
-
-function handleVideoLoadStart() {
-  videoLoading.value = true;
-}
-
 onMounted(() => {
-  setVh();
-  window.addEventListener('resize', setVh);
-  window.addEventListener('orientationchange', setVh);
-
-  const video = document.querySelector('.hero-video');
-  if (video) {
-    video.addEventListener('error', handleVideoError);
-    video.addEventListener('stalled', handleVideoError);
-    video.addEventListener('play', handleVideoPlay);
-    video.addEventListener('loadstart', handleVideoLoadStart);
-    
-    // Check if video is already in a failed state on mount (common after navigation)
-    if (video.readyState === 0) {
-      // Give it a moment to try loading, then check again
-      setTimeout(() => {
-        if (video.readyState === 0) {
-          videoError.value = true;
-        }
-      }, 1000);
-    }
-  }
-
   window.addEventListener('pageshow', handlePageShow);
   document.addEventListener('visibilitychange', handleVisibilityChange);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', setVh);
-  window.removeEventListener('orientationchange', setVh);
-
-  const video = document.querySelector('.hero-video');
-  if (video) {
-    video.removeEventListener('error', handleVideoError);
-    video.removeEventListener('stalled', handleVideoError);
-    video.removeEventListener('play', handleVideoPlay);
-    video.removeEventListener('loadstart', handleVideoLoadStart);
-  }
-
   window.removeEventListener('pageshow', handlePageShow);
   document.removeEventListener('visibilitychange', handleVisibilityChange);
 });
@@ -115,24 +48,7 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="hero-section">
-    <!-- Background poster that shows while video loads or restarts -->
-    <img
-      v-if="(videoLoading || isRestarting) && !videoError"
-      alt=""
-      class="hero-video-poster"
-      src="/videos/hero-video-poster.jpg"
-      style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-      " />
-
     <video
-      v-if="!videoError"
       autoplay
       class="hero-video"
       loop
@@ -144,20 +60,6 @@ onBeforeUnmount(() => {
       <source src="/videos/hero-video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <img
-      v-else
-      alt="Hero video fallback"
-      class="hero-video-fallback"
-      src="/videos/hero-video-poster.jpg"
-      style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-      " />
 
     <div class="overlay" />
     <div class="bottom-gradient" />
