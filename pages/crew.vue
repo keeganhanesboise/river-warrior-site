@@ -1,9 +1,4 @@
 <script setup lang="ts">
-useHead({
-  link: [
-    { rel: 'preload', as: 'image', href: '/_ipx/_/images/camera_crew.jpg' }
-  ]
-});
 interface CrewMember {
   name: string;
   title: string;
@@ -57,7 +52,7 @@ const crewMembers: CrewMember[] = [
       <NuxtImg
         alt=""
         class="hero-image"
-        loading="eager"
+        format="auto"
         src="/images/camera_crew.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Crew</h1>
@@ -67,7 +62,11 @@ const crewMembers: CrewMember[] = [
       <div class="member-container">
         <div v-for="(member, index) in crewMembers" :key="index" class="member">
           <div class="headshot-container">
-            <NuxtImg alt="" class="headshot" :src="member.image" />
+            <NuxtImg
+              alt=""
+              class="headshot"
+              format="auto"
+              :src="member.image" />
           </div>
           <div class="member-info">
             <h2 class="member-name">{{ member.name }}</h2>

@@ -35,7 +35,7 @@ const socialLinks: FooterSocialIcon[] = [
         <NuxtImg
           alt="River Warrior Paddle Icon"
           class="footer-logo"
-          src="/images/rw_paddle_icon_white.png" />
+          format="auto" src="/images/rw_paddle_icon_white.png" />
       </div>
 
       <div class="footer-section links">
@@ -63,7 +63,7 @@ const socialLinks: FooterSocialIcon[] = [
             <NuxtImg
               alt="Documentary Instagram Page"
               class="social-icon"
-              :src="social.icon" />
+              format="auto" :src="social.icon" />
           </a>
         </div>
       </div>

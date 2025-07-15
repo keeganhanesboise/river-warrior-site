@@ -5,6 +5,7 @@
         <NuxtImg
           alt="Ann conducting water quality testing"
           class="impact-callout-image"
+          format="auto"
           src="/images/ann_water_quality_testing.jpg" />
       </div>
       <div class="impact-callout-content">

@@ -139,7 +139,7 @@ onUnmounted(() => {
               v-if="section.image"
               alt=""
               class="section-image"
-              :src="section.image" />
+              format="auto" :src="section.image" />
             <video
               v-if="section.video"
               ref="el => videoRefs.value[index] = el as HTMLVideoElement | null"
@@ -169,7 +169,7 @@ onUnmounted(() => {
                   v-if="section.image"
                   alt=""
                   class="section-image"
-                  :src="section.image" />
+                  format="auto" :src="section.image" />
                 <video
                   v-if="section.video"
                   autoplay

@@ -1,16 +1,10 @@
-<script setup lang="ts">
-useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/_ipx/_/images/water_quality.jpg' }]
-});
-</script>
-
 <template>
   <main>
     <section class="hero">
       <NuxtImg
         alt=""
         class="hero-image"
-        loading="eager"
+        format="auto"
         src="/images/water_quality.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Impact</h1>
@@ -38,6 +32,7 @@ useHead({
         <NuxtImg
           alt="Ann conducting water quality testing"
           class="water-quality-image"
+          format="auto"
           src="/images/ann_water_quality_testing.jpg" />
       </div>
     </section>
@@ -49,6 +44,7 @@ useHead({
             <NuxtImg
               alt=""
               class="impact-icon"
+              format="auto"
               src="/images/on_the_ground_water_testing.png" />
           </div>
           <div class="impact-content">
@@ -75,6 +71,7 @@ useHead({
             <NuxtImg
               alt=""
               class="impact-icon"
+              format="auto"
               src="/images/what_it_measures.png" />
           </div>
           <div class="impact-content">
@@ -137,6 +134,7 @@ useHead({
             <NuxtImg
               alt=""
               class="impact-icon"
+              format="auto"
               src="/images/why_it_matters.png" />
           </div>
           <div class="impact-content">
@@ -172,6 +170,7 @@ useHead({
             <NuxtImg
               alt=""
               class="impact-icon"
+              format="auto"
               src="/images/take_action_for_our_rivers.png" />
           </div>
           <div class="impact-content">

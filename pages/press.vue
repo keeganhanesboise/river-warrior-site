@@ -1,7 +1,4 @@
 <script setup lang="ts">
-useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/_ipx/_/images/press-hero.jpg' }]
-});
 const pressItems = [
   {
     title: 'Farmer completes 2000 mile paddle from carolina to the gulf',
@@ -96,7 +93,7 @@ const closeLightbox = () => {
       <NuxtImg
         alt=""
         class="hero-image"
-        loading="eager"
+        format="auto"
         src="/images/press-hero.jpg" />
       <MainNavigation />
       <h1 class="hero-title">Press</h1>
@@ -137,7 +134,7 @@ const closeLightbox = () => {
             tabindex="0"
             @click="openLightbox(still)"
             @keydown.enter="openLightbox(still)">
-            <NuxtImg alt="" :src="still" />
+            <NuxtImg alt="" format="auto" :src="still" />
           </div>
         </div>
         <button
