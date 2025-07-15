@@ -1,6 +1,42 @@
+<script setup>
+import { onMounted, ref } from 'vue';
+
+const heroVideo = ref(null);
+
+onMounted(() => {
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  const sources = isMobile
+    ? [{ src: '/videos/hero-video-mobile.mp4', type: 'video/mp4' }]
+    : [
+        { src: '/videos/hero-video.webm', type: 'video/webm' },
+        { src: '/videos/hero-video.mp4', type: 'video/mp4' }
+      ];
+
+  const videoEl = heroVideo.value;
+
+  // Remove any existing <source> tags (if hydration injected anything)
+  while (videoEl.firstChild) {
+    videoEl.removeChild(videoEl.firstChild);
+  }
+
+  // Append new <source> tags
+  sources.forEach(({ src, type }) => {
+    const source = document.createElement('source');
+    source.src = src;
+    source.type = type;
+    videoEl.appendChild(source);
+  });
+
+  // Reload video with new sources
+  videoEl.load();
+});
+</script>
+
 <template>
   <section class="hero-section">
     <video
+      ref="heroVideo"
       autoplay
       class="hero-video"
       loop
@@ -9,8 +45,7 @@
       poster="/videos/hero-video-poster.jpg"
       preload="auto"
       webkit-playsinline>
-      <source src="/videos/hero-video.webm" type="video/webm" />
-      <source src="/videos/hero-video.mp4" type="video/mp4" />
+      <!-- Sources will be injected via JS -->
       Your browser does not support the video tag.
     </video>
     <div class="overlay" />
