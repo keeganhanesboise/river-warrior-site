@@ -1,6 +1,42 @@
 <script setup>
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/images/water_quality.jpg' }]
+  link: [{ rel: 'preload', as: 'image', href: '/images/water_quality.jpg' }],
+  title: 'Water Quality Impact - River Warrior Documentary',
+  meta: [
+    // Standard meta description
+    {
+      name: 'description',
+      content:
+        'Discover how Ann Rose’s 1,895-mile river journey uncovered hidden water pollution through on-the-ground testing. Learn how data, storytelling, and action can protect our rivers.'
+    },
+
+    // Open Graph tags
+    { property: 'og:title', content: 'River Warrior – Water Quality Impact' },
+    {
+      property: 'og:description',
+      content:
+        'Follow Ann Rose as she tests water quality across nearly 2,000 miles of American rivers, revealing the unseen crisis threatening our waterways.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://riverwarrior.netlify.app/impact' },
+    {
+      property: 'og:image',
+      content: 'https://riverwarrior.netlify.app/images/water_quality.jpg'
+    },
+
+    // Twitter Card tags
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'River Warrior – Water Quality Impact' },
+    {
+      name: 'twitter:description',
+      content:
+        'Nearly 2,000 miles. Real-time water testing. One mission: expose the invisible crisis in America’s rivers.'
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://riverwarrior.netlify.app/images/water_quality.jpg'
+    }
+  ]
 });
 </script>
 

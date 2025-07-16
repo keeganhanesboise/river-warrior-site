@@ -1,6 +1,48 @@
 <script setup lang="ts">
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/images/press-hero.jpg' }]
+  link: [{ rel: 'preload', as: 'image', href: '/images/press-hero.jpg' }],
+  title: 'Press & Media – River Warrior Documentary',
+  meta: [
+    // Standard meta description
+    {
+      name: 'description',
+      content:
+        'Explore press coverage, download high-resolution stills, and access media resources for River Warrior — the documentary journey from Appalachia to the Gulf.'
+    },
+
+    // Open Graph tags
+    {
+      property: 'og:title',
+      content: 'Press & Media – River Warrior Documentary'
+    },
+    {
+      property: 'og:description',
+      content:
+        'Browse press articles, download official stills, and access the media kit for River Warrior — a documentary highlighting water quality from Appalachia to the Gulf.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://riverwarrior.netlify.app/press' },
+    {
+      property: 'og:image',
+      content: 'https://riverwarrior.netlify.app/images/press-hero.jpg'
+    },
+
+    // Twitter Card tags
+    { name: 'twitter:card', content: 'summary_large_image' },
+    {
+      name: 'twitter:title',
+      content: 'Press & Media – River Warrior Documentary'
+    },
+    {
+      name: 'twitter:description',
+      content:
+        'Access press resources for River Warrior — a film following a solo water quality journey across 1,895 miles of rivers. Download stills and read media coverage.'
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://riverwarrior.netlify.app/images/press-hero.jpg'
+    }
+  ]
 });
 
 const pressItems = [

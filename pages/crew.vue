@@ -14,6 +14,48 @@ useHead({
       as: 'image',
       href: '/images/caroline_renfro_headshot.jpg'
     }
+  ],
+  title: 'Meet the Crew – River Warrior Documentary',
+  meta: [
+    // Standard meta description
+    {
+      name: 'description',
+      content:
+        'Meet the filmmakers behind River Warrior — the storytellers, documentarians, and visionaries who followed Ann Rose’s journey from Appalachia to the Gulf.'
+    },
+
+    // Open Graph tags
+    {
+      property: 'og:title',
+      content: 'Meet the Crew – River Warrior Documentary'
+    },
+    {
+      property: 'og:description',
+      content:
+        'Go behind the scenes with the River Warrior crew. Learn about the filmmakers who captured Ann Rose’s 1,895-mile river journey to raise awareness for clean water.'
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://riverwarrior.netlify.app/crew' },
+    {
+      property: 'og:image',
+      content: 'https://riverwarrior.netlify.app/images/camera_crew.jpg'
+    },
+
+    // Twitter Card tags
+    { name: 'twitter:card', content: 'summary_large_image' },
+    {
+      name: 'twitter:title',
+      content: 'Meet the Crew – River Warrior Documentary'
+    },
+    {
+      name: 'twitter:description',
+      content:
+        'Meet the River Warrior documentary team — filmmakers, cinematographers, and field crew who brought Ann Rose’s journey to the screen.'
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://riverwarrior.netlify.app/images/camera_crew.jpg'
+    }
   ]
 });
 
