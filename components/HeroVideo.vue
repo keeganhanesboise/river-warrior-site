@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue';
 
 const heroVideo = ref(null);
+const videoFallback = ref(false);
 
 onMounted(() => {
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
@@ -34,7 +35,12 @@ onMounted(() => {
     if (videoEl.duration > 12) {
       videoEl.currentTime = 12;
     }
-    videoEl.play(); // Ensure autoplay kicks in after setting currentTime
+
+    // Attempt to play the video
+    videoEl.play().catch(() => {
+      // Autoplay failed (likely low power mode or user gesture needed)
+      videoFallback.value = true;
+    });
   });
 
   videoEl.load();
@@ -43,7 +49,10 @@ onMounted(() => {
 
 <template>
   <section class="hero-section">
+    <div v-if="videoFallback" class="hero-image-fallback" />
+
     <video
+      v-else
       ref="heroVideo"
       autoplay
       class="hero-video"
@@ -94,6 +103,16 @@ onMounted(() => {
 <style scoped>
 #logo {
   width: 100%;
+}
+
+.hero-image-fallback {
+  background-image: url('/images/hero-video-fallback.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
 }
 
 .hero-section {
