@@ -179,6 +179,7 @@ const closeLightbox = () => {
           <div
             v-for="(still, index) in displayedStills"
             :key="index"
+            aria-label="Open lightbox for still image"
             class="still-wrapper"
             role="button"
             tabindex="0"
