@@ -5,15 +5,12 @@ const heroVideo = ref(null);
 
 onMounted(() => {
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
-
   const videoEl = heroVideo.value;
 
-  // Set mobile or desktop poster
   videoEl.poster = isMobile
     ? '/videos/hero-video-mobile-poster.jpg'
     : '/videos/hero-video-poster.jpg';
 
-  // Set video sources based on device
   const sources = isMobile
     ? [{ src: '/videos/hero-video-mobile.mp4', type: 'video/mp4' }]
     : [
@@ -30,6 +27,14 @@ onMounted(() => {
     source.src = src;
     source.type = type;
     videoEl.appendChild(source);
+  });
+
+  // Seek to 12 seconds after metadata is loaded
+  videoEl.addEventListener('loadedmetadata', () => {
+    if (videoEl.duration > 12) {
+      videoEl.currentTime = 12;
+    }
+    videoEl.play(); // Ensure autoplay kicks in after setting currentTime
   });
 
   videoEl.load();
