@@ -57,7 +57,15 @@ onMounted(() => {
     <div class="hero-content">
       <div class="logo-container fade-in">
         <h1 class="sr-only">River Warrior Documentary</h1>
-        <NuxtImg id="logo" alt="" format="auto" src="/images/logo_white.png" />
+        <picture>
+          <source srcset="/images/logo_white.webp" type="image/webp" />
+          <img
+            id="logo"
+            alt=""
+            loading="eager"
+            src="/images/logo_white.png"
+            style="width: 100%" />
+        </picture>
       </div>
     </div>
     <div class="scroll-indicator">

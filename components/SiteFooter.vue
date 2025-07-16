@@ -32,10 +32,16 @@ const socialLinks: FooterSocialIcon[] = [
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-section brand">
-        <NuxtImg
-          alt="River Warrior Paddle Icon"
-          class="footer-logo"
-          format="auto" src="/images/rw_paddle_icon_white.png" />
+        <picture>
+          <source
+            srcset="/images/rw_paddle_icon_white.webp"
+            type="image/webp" />
+          <img
+            alt="River Warrior Paddle Icon"
+            class="footer-logo"
+            loading="lazy"
+            src="/images/rw_paddle_icon_white.png" />
+        </picture>
       </div>
 
       <div class="footer-section links">
@@ -60,10 +66,22 @@ const socialLinks: FooterSocialIcon[] = [
             :href="social.url"
             rel="noopener noreferrer"
             target="_blank">
-            <NuxtImg
+            <picture v-if="social.icon.endsWith('.svg') === false">
+              <source
+                :srcset="social.icon.replace(/\.(png|jpg|jpeg|JPG)$/, '.webp')"
+                type="image/webp" />
+              <img
+                alt="Documentary Instagram Page"
+                class="social-icon"
+                loading="lazy"
+                :src="social.icon" />
+            </picture>
+            <img
+              v-else
               alt="Documentary Instagram Page"
               class="social-icon"
-              format="auto" :src="social.icon" />
+              loading="lazy"
+              :src="social.icon" />
           </a>
         </div>
       </div>

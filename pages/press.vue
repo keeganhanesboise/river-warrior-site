@@ -140,7 +140,34 @@ const closeLightbox = () => {
             tabindex="0"
             @click="openLightbox(still)"
             @keydown.enter="openLightbox(still)">
-            <NuxtImg alt="" format="auto" :src="still" />
+            <picture v-if="still.match(/\.(jpe?g|png|JPG)$/)">
+              <source
+                :srcset="still.replace(/\.(jpe?g|png|JPG)$/, '.webp')"
+                type="image/webp" />
+              <img
+                alt=""
+                loading="lazy"
+                :src="still"
+                style="
+                  width: 100%;
+                  aspect-ratio: 16/9;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                " />
+            </picture>
+            <img
+              v-else
+              alt=""
+              loading="lazy"
+              :src="still"
+              style="
+                width: 100%;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              " />
           </div>
         </div>
         <button

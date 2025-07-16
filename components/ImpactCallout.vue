@@ -2,11 +2,16 @@
   <section class="impact-callout-section">
     <div class="impact-callout-container">
       <div class="impact-callout-image-wrapper">
-        <NuxtImg
-          alt="Ann conducting water quality testing"
-          class="impact-callout-image"
-          format="auto"
-          src="/images/ann_water_quality_testing.jpg" />
+        <picture>
+          <source
+            srcset="/images/ann_water_quality_testing.webp"
+            type="image/webp" />
+          <img
+            alt="Ann conducting water quality testing"
+            class="impact-callout-image"
+            loading="eager"
+            src="/images/ann_water_quality_testing.jpg" />
+        </picture>
       </div>
       <div class="impact-callout-content">
         <h2 class="impact-callout-title">Why Water Quality Matters</h2>

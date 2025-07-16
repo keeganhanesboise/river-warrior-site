@@ -37,11 +37,16 @@ useHead({
             urgent call to see, understand, and act.
           </p>
         </div>
-        <NuxtImg
-          alt="Ann conducting water quality testing"
-          class="water-quality-image"
-          format="auto"
-          src="/images/ann_water_quality_testing.jpg" />
+        <picture>
+          <source
+            srcset="/images/ann_water_quality_testing.webp"
+            type="image/webp" />
+          <img
+            alt="Ann conducting water quality testing"
+            class="water-quality-image"
+            loading="lazy"
+            src="/images/ann_water_quality_testing.jpg" />
+        </picture>
       </div>
     </section>
 
@@ -49,11 +54,16 @@ useHead({
       <div class="impact-container">
         <div class="impact-item">
           <div class="icon-container">
-            <NuxtImg
-              alt=""
-              class="impact-icon"
-              format="auto"
-              src="/images/on_the_ground_water_testing.png" />
+            <picture>
+              <source
+                srcset="/images/on_the_ground_water_testing.webp"
+                type="image/webp" />
+              <img
+                alt=""
+                class="impact-icon"
+                loading="lazy"
+                src="/images/on_the_ground_water_testing.png" />
+            </picture>
           </div>
           <div class="impact-content">
             <h2 class="impact-title">On-the-Ground Water Testing</h2>
@@ -76,11 +86,16 @@ useHead({
         </div>
         <div class="impact-item">
           <div class="icon-container">
-            <NuxtImg
-              alt=""
-              class="impact-icon"
-              format="auto"
-              src="/images/what_it_measures.png" />
+            <picture>
+              <source
+                srcset="/images/what_it_measures.webp"
+                type="image/webp" />
+              <img
+                alt=""
+                class="impact-icon"
+                loading="lazy"
+                src="/images/what_it_measures.png" />
+            </picture>
           </div>
           <div class="impact-content">
             <h2 class="impact-title">What It Measures</h2>
@@ -139,11 +154,14 @@ useHead({
         </div>
         <div class="impact-item">
           <div class="icon-container">
-            <NuxtImg
-              alt=""
-              class="impact-icon"
-              format="auto"
-              src="/images/why_it_matters.png" />
+            <picture>
+              <source srcset="/images/why_it_matters.webp" type="image/webp" />
+              <img
+                alt=""
+                class="impact-icon"
+                loading="lazy"
+                src="/images/why_it_matters.png" />
+            </picture>
           </div>
           <div class="impact-content">
             <h2 class="impact-title">Why It Matters</h2>
@@ -175,11 +193,16 @@ useHead({
         </div>
         <div class="impact-item">
           <div class="icon-container">
-            <NuxtImg
-              alt=""
-              class="impact-icon"
-              format="auto"
-              src="/images/take_action_for_our_rivers.png" />
+            <picture>
+              <source
+                srcset="/images/take_action_for_our_rivers.webp"
+                type="image/webp" />
+              <img
+                alt=""
+                class="impact-icon"
+                loading="lazy"
+                src="/images/take_action_for_our_rivers.png" />
+            </picture>
           </div>
           <div class="impact-content">
             <h2 class="impact-title">Take Action for Our Rivers</h2>

@@ -135,11 +135,23 @@ onUnmounted(() => {
             :key="index"
             class="image-wrapper"
             :class="{ active: currentSection === index }">
-            <NuxtImg
-              v-if="section.image"
-              alt=""
+            <picture
+              v-if="section.image && section.image.match(/\.(jpe?g|png|JPG)$/)">
+              <source
+                :srcset="section.image.replace(/\.(jpe?g|png|JPG)$/, '.webp')"
+                type="image/webp" />
+              <img
+                :alt="section.title"
+                class="section-image"
+                loading="lazy"
+                :src="section.image" />
+            </picture>
+            <img
+              v-else-if="section.image"
+              :alt="section.title"
               class="section-image"
-              format="auto" :src="section.image" />
+              loading="lazy"
+              :src="section.image" />
             <video
               v-if="section.video"
               ref="el => videoRefs.value[index] = el as HTMLVideoElement | null"
@@ -165,11 +177,27 @@ onUnmounted(() => {
               <h2 class="section-title">{{ section.title }}</h2>
               <p class="section-text" v-html="section.text" />
               <div class="mobile-image">
-                <NuxtImg
-                  v-if="section.image"
-                  alt=""
+                <picture
+                  v-if="
+                    section.image && section.image.match(/\.(jpe?g|png|JPG)$/)
+                  ">
+                  <source
+                    :srcset="
+                      section.image.replace(/\.(jpe?g|png|JPG)$/, '.webp')
+                    "
+                    type="image/webp" />
+                  <img
+                    :alt="section.title"
+                    class="section-image"
+                    loading="lazy"
+                    :src="section.image" />
+                </picture>
+                <img
+                  v-else-if="section.image"
+                  :alt="section.title"
                   class="section-image"
-                  format="auto" :src="section.image" />
+                  loading="lazy"
+                  :src="section.image" />
                 <video
                   v-if="section.video"
                   autoplay
