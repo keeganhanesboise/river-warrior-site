@@ -82,7 +82,9 @@ const toggleStills = () => {
 };
 
 const openLightbox = (imageSrc: string) => {
-  selectedImage.value = imageSrc;
+  // Extract base filename without extension and add '-original.jpg' to get the high quality version
+  selectedImage.value =
+    imageSrc.replace(/\.(webp|jpe?g|png)$/i, '') + '-original.jpg';
   isLightboxOpen.value = true;
 };
 

@@ -46,28 +46,13 @@ onUnmounted(() => {
       x
     </button>
     <div class="lightbox-content">
-      <picture v-if="imageSrc.match(/\.(jpe?g|png|JPG)$/)">
-        <source
-          :srcset="imageSrc.replace(/\.(jpe?g|png|JPG)$/, '.webp')"
-          type="image/webp" />
-        <img
-          alt=""
-          loading="eager"
-          :src="imageSrc"
-          style="
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 4px;
-          " />
-      </picture>
       <img
-        v-else
         alt=""
         loading="eager"
         :src="imageSrc"
         style="
-          max-width: 100%;
+          width: 100%;
+          max-width: 1920px;
           max-height: 90vh;
           object-fit: contain;
           border-radius: 4px;
