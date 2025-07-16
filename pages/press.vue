@@ -61,7 +61,6 @@ const pressItems = [
     source: 'App Voices',
     url: 'https://appvoices.org/2024/08/08/ann-rose-update/ '
   },
-  { title: 'REI Podcast Interview', source: 'REI Podcasts', url: '' },
   {
     title: "Ann Rose, the 'River Warrior'",
     source: 'Ashe Post & Times',
@@ -71,6 +70,11 @@ const pressItems = [
     title: 'Ann Rose Send Off',
     source: 'New River Conservancy',
     url: 'https://newriverconservancy.org/event/ann-rose-send-off/'
+  },
+  {
+    title: 'REI Podcast Interview (Coming Soon)',
+    source: 'REI Podcasts',
+    url: ''
   }
 ];
 
@@ -157,10 +161,18 @@ const closeLightbox = () => {
             v-for="(item, index) in displayedPressItems"
             :key="index"
             class="press-card">
-            <a :href="item.url" rel="noopener noreferrer" target="_blank">
+            <a
+              v-if="item.url"
+              :href="item.url"
+              rel="noopener noreferrer"
+              target="_blank">
               <h3 class="press-title">{{ item.title }}</h3>
               <p class="press-source">{{ item.source }}</p>
             </a>
+            <div v-else>
+              <h3 class="press-title">{{ item.title }}</h3>
+              <p class="press-source">{{ item.source }}</p>
+            </div>
           </div>
         </div>
         <button
