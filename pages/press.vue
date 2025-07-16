@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+  link: [{ rel: 'preload', as: 'image', href: '/images/press-hero.jpg' }]
+});
+
 const pressItems = [
   {
     title: 'Farmer completes 2000 mile paddle from carolina to the gulf',
@@ -90,11 +94,13 @@ const closeLightbox = () => {
 <template>
   <main>
     <section class="hero">
-      <NuxtImg
+      <img
         alt=""
         class="hero-image"
-        format="auto"
-        src="/images/press-hero.jpg" />
+        height="1080"
+        loading="eager"
+        src="/images/press-hero.jpg"
+        width="1920" />
       <MainNavigation />
       <h1 class="hero-title">Press</h1>
     </section>
