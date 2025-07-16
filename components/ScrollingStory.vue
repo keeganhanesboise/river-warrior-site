@@ -2,6 +2,7 @@
 interface StorySection {
   title: string;
   text: string;
+  textMobile: string;
   image?: string;
   video?: string;
 }
@@ -18,29 +19,32 @@ const sections: StorySection[] = [
       'veins of the country—rivers that nourish towns, farms, and ecosystems, but are ' +
       'too often neglected or threatened. This journey wasn’t just about endurance—it was ' +
       'about honoring the rivers and raising awareness for the need to protect them.',
+    textMobile:
+      '<em>River Warrior</em> follows one woman’s 1,895-mile journey through America’s ' +
+      'watersheds—powered by a paddle, pedals, and a fierce belief that water is worth ' +
+      'fighting for. In July 2024, Ann Rose launched her kayak near her Appalachian farm ' +
+      'and traveled to the Gulf of Mexico. Along the way, she moved through rivers that ' +
+      'sustain towns, farms, and ecosystems—yet are often neglected. Her mission: to honor ' +
+      'these waters and raise awareness about the urgent need to protect them.',
     image: '/images/kayak_splash.jpg'
   },
   {
-    title: 'From Appalachia to the Gulf',
+    title: 'Appalachia to the Gulf',
     text:
-      'Beginning in the highland headwaters of Lansing, North Carolina, Ann followed ' +
-      'the current south—paddling through rapids, lock and dam systems, barges, industrial ' +
-      'zones, and backwater bayous, across four major rivers and countless tributaries. She' +
-      ' traveled in rhythm with the water, learning from it, battling it, and listening to ' +
-      'what it had to say.<br><br>' +
-      'Her journey began on the <strong>New River</strong>, one of the oldest rivers in the world, winding ' +
-      'through the Appalachian Mountains with ancient strength and resilience. From there, ' +
-      'she entered the <strong>Kanawha River</strong>, where the damage from coal mining and industry became ' +
-      'impossible to ignore. The <strong>Ohio River</strong> carried her further west, its wide, working ' +
-      'waters reflecting both the legacy of commerce and the burden of pollution. Finally, ' +
-      'she reached the <strong>Mississippi River</strong>, a force of nature as vast as it is complexly dangerous ' +
-      'and deeply symbolic of our national relationship with water.<br><br>' +
-      'Ann’s journey ended on September 27th, 2024—just as Hurricane Helene ravaged her ' +
-      'hometown, forcing her to turn from river warrior to relief worker to help rebuild ' +
-      'what was lost. The contrast was stark but telling: while Ann had spent months tracing ' +
-      'the veins of our interconnected water systems, nature struck home with devastating ' +
-      'force—only deepening the urgency of her mission to raise awareness and protect ' +
-      'the waters that sustain us.',
+      'Beginning in the highland headwaters of Lansing, North Carolina, Ann followed the current south—paddling through ' +
+      'rapids, dams, barges, industrial zones, and backwater bayous across four major rivers. She moved in rhythm with' +
+      ' the water, learning from it, battling it, and listening to its message.<br>' +
+      'Her journey began on the ancient <strong>New River</strong>, flowed into the damaged <strong>Kanawha</strong>, then the burdened <strong>Ohio</strong>, and finally ' +
+      'the mighty <strong>Mississippi</strong>—each revealing a different chapter of America’s relationship with water.<br>' +
+      'Ann’s journey ended on September 27th, 2024, as Hurricane Helene struck her hometown. She quickly shifted from ' +
+      'river warrior to relief worker, the storm underscoring her mission: to protect the water systems that connect, ' +
+      'sustain, and define us.',
+    textMobile:
+      'Beginning in Lansing, North Carolina, Ann paddled south through rapids, dams, barges, and bayous—traveling four ' +
+      'major rivers and countless tributaries. Her path traced the ancient New, damaged Kanawha, burdened Ohio, and ' +
+      'mighty Mississippi, each revealing a chapter of America’s relationship with water. On September 27th, 2024, ' +
+      'Hurricane Helene struck her hometown, turning Ann from river warrior to relief worker. The storm’s devastation ' +
+      'deepened her mission to protect the water systems that sustain and connect us all.',
     video: '/videos/map-animation-final.mp4'
   },
   {
@@ -55,6 +59,12 @@ const sections: StorySection[] = [
       'personal discovery, but to speak on behalf of the watersheds that are too often overlooked. ' +
       "<em>River Warrior</em> introduces audiences to a woman who doesn't just talk about change—she " +
       'lives it, paddles it, and fights for it.',
+    textMobile:
+      'Ann Rose is no ordinary adventurer. A self-taught, off-grid farmer in Appalachia, she built ' +
+      'Rose Mountain Farm by hand, grounded in self-reliance and reverence for the land. She knows ' +
+      'water is life—it feeds her crops, her animals, and everything downstream. That truth led her ' +
+      'to the river, not just for discovery, but to speak for the overlooked watersheds. River Warrior ' +
+      'introduces a woman who doesn’t just talk about change—she lives it, paddles it, and fights for it.',
     image: '/images/ann_portrait.jpg'
   }
 ];
@@ -175,7 +185,7 @@ onUnmounted(() => {
             :class="{ active: currentSection === index }">
             <div class="mobile-content">
               <h2 class="section-title">{{ section.title }}</h2>
-              <p class="section-text" v-html="section.text" />
+              <p class="section-text" v-html="section.textMobile" />
               <div class="mobile-image">
                 <picture
                   v-if="
@@ -224,7 +234,7 @@ onUnmounted(() => {
 }
 
 .content-wrapper {
-  max-width: 1280px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
 }
@@ -297,11 +307,10 @@ onUnmounted(() => {
 
 .section-image {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: 70vh;
   object-fit: cover;
   border-radius: 8px;
   aspect-ratio: 3/4;
-  width: 100%;
   height: auto;
 }
 
@@ -364,12 +373,12 @@ onUnmounted(() => {
     justify-content: center;
     text-align: center;
     height: 100%;
-    padding: 1rem;
+    padding: 4rem 2rem;
     overflow-y: auto;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
@@ -390,20 +399,18 @@ onUnmounted(() => {
 
   .mobile-image {
     max-width: 350px;
-    height: 35vh;
+    height: 45vh;
     margin: 0 auto;
   }
 
   .mobile-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
   }
 
   .mobile-image video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
   }
 }
 </style>

@@ -129,6 +129,8 @@ const socialLinks: FooterSocialIcon[] = [
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .links a {
@@ -211,6 +213,11 @@ const socialLinks: FooterSocialIcon[] = [
 }
 
 @media (min-width: 768px) {
+  .links ul {
+    justify-content: normal;
+    flex-direction: column;
+  }
+
   .footer-content {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
