@@ -71,56 +71,26 @@ const sections: StorySection[] = [
 
 const textRefs = ref<(HTMLElement | null)[]>([]);
 const currentSection = ref(0);
-const isMobile = ref(false);
 
-const updateMobileState = () => {
-  isMobile.value = window.innerWidth <= 768;
-};
-
-const checkScroll = () => {
+const updateSectionOnScroll = () => {
   const windowHeight = window.innerHeight;
-  const isMobile = window.innerWidth <= 768;
-
-  if (isMobile) {
-    const storySection = document.querySelector('#story-section');
-    if (!storySection) return;
-
-    const rect = storySection.getBoundingClientRect();
-    const progress = -rect.top / (rect.height - windowHeight);
-    const sectionCount = sections.length;
-
-    // Calculate which section should be visible based on scroll progress
-    const targetSection = Math.floor(progress * sectionCount);
-
-    if (
-      targetSection >= 0 &&
-      targetSection < sections.length &&
-      targetSection !== currentSection.value
-    ) {
-      currentSection.value = targetSection;
+  textRefs.value.forEach((element, index) => {
+    if (!element) return;
+    const rect = element.getBoundingClientRect();
+    const elementCenter = rect.top + rect.height / 2;
+    if (Math.abs(elementCenter - windowHeight / 2) < windowHeight / 4) {
+      currentSection.value = index;
     }
-  } else {
-    textRefs.value.forEach((element, index) => {
-      if (!element) return;
-      const rect = element.getBoundingClientRect();
-      const elementCenter = rect.top + rect.height / 2;
-      if (Math.abs(elementCenter - windowHeight / 2) < windowHeight / 4) {
-        currentSection.value = index;
-      }
-    });
-  }
+  });
 };
 
 onMounted(() => {
-  updateMobileState();
-  window.addEventListener('scroll', checkScroll);
-  window.addEventListener('resize', updateMobileState);
-  checkScroll();
+  window.addEventListener('scroll', updateSectionOnScroll);
+  updateSectionOnScroll();
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', checkScroll);
-  window.removeEventListener('resize', updateMobileState);
+  window.removeEventListener('scroll', updateSectionOnScroll);
 });
 </script>
 
@@ -164,7 +134,6 @@ onUnmounted(() => {
               :src="section.image" />
             <video
               v-if="section.video"
-              ref="el => videoRefs.value[index] = el as HTMLVideoElement | null"
               autoplay
               class="section-image"
               loop
@@ -177,12 +146,11 @@ onUnmounted(() => {
 
       <!-- Mobile View -->
       <div class="mobile-view">
-        <div class="sticky-container">
+        <div class="mobile-sections">
           <div
             v-for="(section, index) in sections"
             :key="index"
-            class="mobile-section"
-            :class="{ active: currentSection === index }">
+            class="mobile-section">
             <div class="mobile-content">
               <h2 class="section-title">{{ section.title }}</h2>
               <p class="section-text" v-html="section.textMobile" />
@@ -327,7 +295,6 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   #story-section {
-    min-height: 300vh;
     padding: 0;
   }
 
@@ -337,33 +304,29 @@ onUnmounted(() => {
 
   .mobile-view {
     display: block;
-    min-height: 300vh;
     position: relative;
+    padding-top: 2rem;
   }
 
-  .sticky-container {
-    position: sticky;
-    top: 0;
-    height: 100vh;
+  .mobile-sections {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    flex-direction: column;
+    gap: 2rem;
+    position: static;
+    height: auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;
   }
 
   .mobile-section {
-    position: absolute;
+    position: static;
     width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease-out;
-    pointer-events: none;
-  }
-
-  .mobile-section.active {
     opacity: 1;
     visibility: visible;
+    transition: none;
     pointer-events: auto;
+    margin-bottom: 2rem;
   }
 
   .mobile-content {
@@ -373,12 +336,12 @@ onUnmounted(() => {
     justify-content: center;
     text-align: center;
     height: 100%;
-    padding: 4rem 2rem;
+    padding: 0 2rem;
     overflow-y: auto;
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
   }
 
@@ -390,7 +353,6 @@ onUnmounted(() => {
   .section-text {
     font-size: 0.95rem;
     max-width: 500px;
-    max-height: 35vh;
     overflow: auto;
     text-align: center;
     margin-bottom: 1rem;
@@ -399,7 +361,6 @@ onUnmounted(() => {
 
   .mobile-image {
     max-width: 350px;
-    height: 45vh;
     margin: 0 auto;
   }
 
