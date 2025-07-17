@@ -84,13 +84,24 @@ const updateSectionOnScroll = () => {
   });
 };
 
+let ticking = false;
+function onScroll() {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateSectionOnScroll();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', updateSectionOnScroll);
+  window.addEventListener('scroll', onScroll);
   updateSectionOnScroll();
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', updateSectionOnScroll);
+  window.removeEventListener('scroll', onScroll);
 });
 </script>
 
