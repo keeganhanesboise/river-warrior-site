@@ -15,7 +15,7 @@
           <iframe
             allowfullscreen
             loading="lazy"
-            src="https://www.youtube.com/embed/zjwntAmkrN0"
+            src="https://www.youtube-nocookie.com/embed/zjwntAmkrN0"
             title="River Warrior Trailer" />
         </div>
       </div>
