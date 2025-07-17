@@ -1,6 +1,9 @@
 <script setup lang="ts">
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/images/press-hero.jpg' }],
+  link: [
+    { rel: 'preload', as: 'image', href: '/images/press-hero.webp' },
+    { rel: 'preload', as: 'image', href: '/images/press-hero.jpg' }
+  ],
   title: 'Press & Media – River Warrior Documentary',
   meta: [
     // Standard meta description
@@ -142,13 +145,16 @@ const closeLightbox = () => {
 <template>
   <main>
     <section class="hero">
-      <img
-        alt=""
-        class="hero-image"
-        height="1080"
-        loading="eager"
-        src="/images/press-hero.jpg"
-        width="1920" />
+      <picture>
+        <source srcset="/images/press-hero.webp" type="image/webp" />
+        <img
+          alt=""
+          class="hero-image"
+          height="1080"
+          loading="eager"
+          src="/images/press-hero.jpg"
+          width="1920" />
+      </picture>
       <MainNavigation />
       <h1 class="hero-title">Press</h1>
     </section>

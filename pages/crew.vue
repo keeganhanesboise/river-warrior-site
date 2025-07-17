@@ -1,6 +1,7 @@
 <script setup lang="ts">
 useHead({
   link: [
+    { rel: 'preload', as: 'image', href: '/images/camera_crew.webp' },
     { rel: 'preload', as: 'image', href: '/images/camera_crew.jpg' },
     { rel: 'preload', as: 'image', href: '/images/haley_mellon_headshot.jpg' },
     {
@@ -118,13 +119,16 @@ const crewMembers: CrewMember[] = [
 <template>
   <main>
     <section class="hero">
-      <img
-        alt=""
-        class="hero-image"
-        height="1080"
-        loading="eager"
-        src="/images/camera_crew.jpg"
-        width="1920" />
+      <picture>
+        <source srcset="/images/camera_crew.webp" type="image/webp" />
+        <img
+          alt=""
+          class="hero-image"
+          height="1080"
+          loading="eager"
+          src="/images/camera_crew.jpg"
+          width="1920" />
+      </picture>
       <MainNavigation />
       <h1 class="hero-title">Crew</h1>
     </section>

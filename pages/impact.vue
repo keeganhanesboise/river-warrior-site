@@ -1,6 +1,9 @@
 <script setup>
 useHead({
-  link: [{ rel: 'preload', as: 'image', href: '/images/water_quality.jpg' }],
+  link: [
+    { rel: 'preload', as: 'image', href: '/images/water_quality.webp' },
+    { rel: 'preload', as: 'image', href: '/images/water_quality.jpg' },
+  ],
   title: 'Water Quality Impact - River Warrior Documentary',
   meta: [
     // Standard meta description
@@ -43,13 +46,16 @@ useHead({
 <template>
   <main>
     <section class="hero">
-      <img
-        alt=""
-        class="hero-image"
-        height="1080"
-        loading="eager"
-        src="/images/water_quality.jpg"
-        width="1920" />
+      <picture>
+        <source srcset="/images/water_quality.webp" type="image/webp" />
+        <img
+          alt=""
+          class="hero-image"
+          height="1080"
+          loading="eager"
+          src="/images/water_quality.jpg"
+          width="1920" />
+      </picture>
       <MainNavigation />
       <h1 class="hero-title">Impact</h1>
     </section>
