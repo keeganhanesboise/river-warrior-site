@@ -2,22 +2,58 @@
 useHead({
   link: [
     { rel: 'preload', as: 'image', href: '/images/logo_white.webp' },
-    { rel: 'preload', as: 'image', href: '/images/logo_white.png' }
+    { rel: 'preload', as: 'image', href: '/images/logo_white.png' },
+    { rel: 'preload', as: 'image', href: '/videos/hero-video-poster.webp' },
+    { rel: 'preload', as: 'image', href: '/videos/hero-video-poster.jpg' },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/videos/hero-video-mobile-poster.webp'
+    },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/videos/hero-video-mobile-poster.jpg'
+    }
   ]
 });
 
 const heroVideo = ref(null);
 const videoFallback = ref(false);
+const isMobile = ref(false);
+const poster = ref('');
+
+function canUseWebP() {
+  try {
+    const elem = document.createElement('canvas');
+    return (
+      !!(elem.getContext && elem.getContext('2d')) &&
+      elem.toDataURL('image/webp').indexOf('data:image/webp') === 0
+    );
+  } catch {
+    return false;
+  }
+}
 
 onMounted(() => {
-  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  isMobile.value = window.matchMedia('(max-width: 767px)').matches;
   const videoEl = heroVideo.value;
 
-  videoEl.poster = isMobile
-    ? '/videos/hero-video-mobile-poster.jpg'
-    : '/videos/hero-video-poster.jpg';
+  const webpSupported = canUseWebP();
 
-  const sources = isMobile
+  if (isMobile.value) {
+    poster.value = webpSupported
+      ? '/videos/hero-video-mobile-poster.webp'
+      : '/videos/hero-video-mobile-poster.jpg';
+  } else {
+    poster.value = webpSupported
+      ? '/videos/hero-video-poster.webp'
+      : '/videos/hero-video-poster.jpg';
+  }
+
+  videoEl.poster = poster.value;
+
+  const sources = isMobile.value
     ? [{ src: '/videos/hero-video-mobile.mp4', type: 'video/mp4' }]
     : [
         { src: '/videos/hero-video.webm', type: 'video/webm' },
@@ -64,7 +100,7 @@ onMounted(() => {
       loop
       muted
       playsinline
-      poster="/videos/hero-video-poster.jpg"
+      :poster="poster"
       preload="auto"
       webkit-playsinline>
       <!-- Sources will be injected via JS -->

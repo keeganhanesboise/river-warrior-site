@@ -75,13 +75,13 @@ useHead({
         </div>
         <picture>
           <source
-            srcset="/images/ann_water_quality_testing.webp"
+            srcset="/images/ann_water_quality_testing_impact.webp"
             type="image/webp" />
           <img
             alt="Ann conducting water quality testing"
             class="water-quality-image"
             loading="lazy"
-            src="/images/ann_water_quality_testing.jpg" />
+            src="/images/ann_water_quality_testing_impact.jpg" />
         </picture>
       </div>
     </section>
