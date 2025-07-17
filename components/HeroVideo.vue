@@ -1,5 +1,10 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+useHead({
+  link: [
+    { rel: 'preload', as: 'image', href: '/images/logo_white.webp' },
+    { rel: 'preload', as: 'image', href: '/images/logo_white.png' }
+  ]
+});
 
 const heroVideo = ref(null);
 const videoFallback = ref(false);
@@ -76,6 +81,7 @@ onMounted(() => {
           <img
             id="logo"
             alt=""
+            fetchpriority="high"
             loading="eager"
             src="/images/logo_white.png"
             style="width: 100%" />
