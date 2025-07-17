@@ -97,7 +97,7 @@ const socialLinks: FooterSocialIcon[] = [
 
 <style scoped>
 .site-footer {
-  background-color: #1e3a2f;
+  background-color: var(--color-primary);
   color: white;
   padding: 4rem 2rem 2rem;
 }
@@ -120,7 +120,7 @@ const socialLinks: FooterSocialIcon[] = [
 }
 
 .footer-section h3 {
-  color: #a8d4bc;
+  color: var(--color-accent);
   font-size: 1.25rem;
   margin: 0 0 1rem;
 }
@@ -142,7 +142,7 @@ const socialLinks: FooterSocialIcon[] = [
 }
 
 .links a:hover {
-  color: #a8d4bc;
+  color: var(--color-accent);
 }
 
 .email-link {
@@ -155,7 +155,7 @@ const socialLinks: FooterSocialIcon[] = [
 }
 
 .email-link:hover {
-  color: #a8d4bc;
+  color: var(--color-accent);
 }
 
 .social-links {
@@ -174,13 +174,13 @@ const socialLinks: FooterSocialIcon[] = [
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: var(--radius-round);
   background-color: transparent;
 }
 
 .social-link:hover {
-  color: #a8d4bc;
-  background-color: #a8d4bc;
+  color: var(--color-accent);
+  background-color: var(--color-accent);
 }
 
 .social-icon {

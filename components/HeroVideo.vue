@@ -151,7 +151,11 @@ onMounted(() => {
   left: 0;
   right: 0;
   height: 30vh;
-  background: linear-gradient(to bottom, rgba(30, 58, 47, 0) 0%, #1e3a2f 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 58, 47, 0) 0%,
+    var(--color-primary) 100%
+  );
   z-index: 1;
 }
 

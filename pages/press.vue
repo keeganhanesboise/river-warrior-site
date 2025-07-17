@@ -285,7 +285,7 @@ const closeLightbox = () => {
 
 .press-links {
   padding: 4rem 2rem;
-  background-color: #f5f5f0;
+  background-color: var(--color-bg);
 }
 
 .press-container,
@@ -296,27 +296,27 @@ const closeLightbox = () => {
 
 .section-title {
   font-size: 2rem;
-  color: #1e3a2f;
+  color: var(--color-primary);
   margin-bottom: 2rem;
   text-align: center;
 }
 
 .press-list li a {
-  color: #1e3a2f;
+  color: var(--color-primary);
   font-size: 1.25rem;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .press-list li a:hover {
-  color: #305d4d;
+  color: var(--color-green);
 }
 
 .still img {
   width: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .press-cards {
@@ -329,8 +329,8 @@ const closeLightbox = () => {
   background: white;
   cursor: pointer;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xs);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -338,7 +338,7 @@ const closeLightbox = () => {
 
 .press-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .press-card a {
@@ -349,13 +349,13 @@ const closeLightbox = () => {
 
 .press-title {
   font-size: 1.5rem;
-  color: #1e3a2f;
+  color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
 
 .press-source {
   font-size: 1rem;
-  color: #305d4d;
+  color: var(--color-green);
   opacity: 0.8;
 }
 
@@ -372,7 +372,7 @@ const closeLightbox = () => {
 }
 
 .doc-stills {
-  background-color: #fff;
+  background-color: white;
   padding: 4rem 2rem;
 }
 
@@ -400,8 +400,8 @@ const closeLightbox = () => {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 @media (min-width: 600px) {
@@ -420,17 +420,17 @@ const closeLightbox = () => {
   display: none;
   margin: 2rem auto 0;
   padding: 0.75rem 1.5rem;
-  background-color: #1e3a2f;
+  background-color: var(--color-primary);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .show-more-btn:hover {
-  background-color: #305d4d;
+  background-color: var(--color-green);
 }
 
 @media (max-width: 767px) {

@@ -195,7 +195,7 @@ const crewMembers: CrewMember[] = [
 
 .crew-members {
   padding: 4rem 2rem;
-  background-color: #f5f5f0;
+  background-color: var(--color-bg);
   min-height: 100vh;
 }
 
@@ -216,7 +216,7 @@ const crewMembers: CrewMember[] = [
 .headshot-container {
   aspect-ratio: 1;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius);
   max-width: 350px;
   margin: 0 auto;
 }
@@ -228,7 +228,7 @@ const crewMembers: CrewMember[] = [
 }
 
 .member-info {
-  color: #1e3a2f;
+  color: var(--color-primary);
   text-align: center;
   max-width: 350px;
   justify-self: center;
@@ -237,13 +237,13 @@ const crewMembers: CrewMember[] = [
 .member-name {
   font-size: 2.5rem;
   margin: 0 0 0.5rem 0;
-  color: #1e3a2f;
+  color: var(--color-primary);
 }
 
 .member-title {
   font-size: 1.25rem;
   margin: 0 0 1.5rem 0;
-  color: #1e3a2f;
+  color: var(--color-primary);
   opacity: 0.9;
 }
 

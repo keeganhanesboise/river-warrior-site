@@ -398,7 +398,7 @@ useHead({
 }
 
 .impact-section {
-  background-color: #f5f5f0;
+  background-color: var(--color-bg);
   padding: 0 2rem 6rem;
   display: flex;
   justify-content: center;
@@ -414,10 +414,10 @@ useHead({
   gap: 3rem;
   align-items: center;
   border: 1px solid #ccc;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 2rem;
   background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .impact-item {
@@ -442,14 +442,14 @@ useHead({
 }
 
 .impact-content {
-  color: #1e3a2f;
+  color: var(--color-primary);
   width: 100%;
   padding: 0 2rem;
 }
 
 .impact-title {
   margin: 0 0 0.5rem 0;
-  color: #1e3a2f;
+  color: var(--color-primary);
   text-align: center;
 }
 
@@ -459,19 +459,19 @@ useHead({
 }
 
 .impact-link {
-  color: #1e3a2f;
+  color: var(--color-primary);
   text-decoration: underline;
   transition: color 0.3s ease;
   line-height: 2;
 }
 
 .impact-link:hover {
-  color: #a8d4bc;
+  color: var(--color-accent);
 }
 
 .water-quality-section {
   padding: 4rem 2rem;
-  background-color: #f5f5f0;
+  background-color: var(--color-bg);
 }
 
 .water-quality-container {
@@ -489,21 +489,21 @@ useHead({
 
 .water-quality-title {
   margin: 0 0 1.5rem 0;
-  color: #1e3a2f;
+  color: var(--color-primary);
 }
 
 .water-quality-description {
   line-height: 1.6;
   margin: 0 0 2rem 0;
-  color: #1e3a2f;
+  color: var(--color-primary);
 }
 
 .water-quality-image {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
 }
 
 ul {

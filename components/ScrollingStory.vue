@@ -195,7 +195,7 @@ onUnmounted(() => {
 
 <style scoped>
 #story-section {
-  background-color: #f5f5f0;
+  background-color: var(--color-bg);
   min-height: 200vh;
   padding: 5rem 2rem 0;
   position: relative;
@@ -229,7 +229,7 @@ onUnmounted(() => {
 .section-title {
   font-size: 2.5rem;
   margin: 0 0 1.5rem 0;
-  color: #1e3a2f;
+  color: var(--color-primary);
   position: relative;
   padding-bottom: 1rem;
 }
@@ -238,17 +238,18 @@ onUnmounted(() => {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 25%;
   height: 2px;
-  background-color: #1e3a2f;
+  background-color: var(--color-primary);
 }
 
 .section-text {
   font-size: 1.25rem;
   line-height: 1.6;
   margin: 0;
-  color: #1e3a2f;
+  color: var(--color-primary);
 }
 
 .image-container {
@@ -277,7 +278,7 @@ onUnmounted(() => {
   max-width: 100%;
   max-height: 70vh;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius);
   aspect-ratio: 3/4;
   height: auto;
 }
@@ -343,6 +344,7 @@ onUnmounted(() => {
   .section-title {
     font-size: 2rem;
     text-align: center;
+    color: var(--color-primary);
   }
 
   .section-title::after {
@@ -357,6 +359,7 @@ onUnmounted(() => {
     text-align: center;
     margin-bottom: 1rem;
     overflow-wrap: break-word;
+    color: var(--color-primary);
   }
 
   .mobile-image {

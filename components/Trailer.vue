@@ -25,7 +25,7 @@
 
 <style scoped>
 .video-container-primary {
-  background-color: #1e3a2f;
+  background-color: var(--color-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@
 
 .trailer-header {
   margin: 0 0 2rem;
-  color: #a8d4bc;
+  color: var(--color-accent);
   position: relative;
   display: inline-block;
   padding-bottom: 1rem;
@@ -64,7 +64,7 @@
   transform: translateX(-50%);
   width: 50%;
   height: 2px;
-  background-color: #a8d4bc;
+  background-color: var(--color-accent);
 }
 
 .logline {
@@ -92,7 +92,7 @@
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 
 @media (min-width: 769px) {
