@@ -5,10 +5,10 @@
         <div class="text-content">
           <h1 class="trailer-header">WATCH THE TRAILER</h1>
           <p class="logline">
-            An inspiring agricultural adventure documentary about an
-            Appalachian, off-grid farmer who is going full force into her next
-            adventure - kayaking from her neighborhood creek all the way to the
-            Gulf of Mexico
+            After enduring a four-year drought, an off-grid farmer embarks on a
+            kayaking journey from her hometown creek in Appalachia all the way
+            to the Gulf—seeking to reconnect with and redefine her relationship
+            to water.
           </p>
         </div>
         <div class="video-container-secondary">
