@@ -44,7 +44,14 @@ export default defineNuxtConfig({
           sizes: '180x180',
           href: '/apple-touch-icon.png'
         },
-        { rel: 'manifest', href: '/site.webmanifest' }
+        { rel: 'manifest', href: '/site.webmanifest' },
+        {
+          rel: 'preload',
+          href: '/fonts/extenda-30deca-webfont.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        }
       ],
       meta: [
         { name: 'theme-color', content: '#ffffff' },
