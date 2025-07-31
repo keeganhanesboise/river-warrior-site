@@ -56,7 +56,7 @@ const sections: StorySection[] = [
       'She went from river warrior to relief worker overnight. After months of paddling the veins of our ' +
       'interconnected water systems, nature struck home with devastating force—making her mission for ' +
       'climate awareness and water protection more urgent than ever.',
-    video: '/videos/map-animation-final.mp4'
+    video: '/videos/map-animation.mp4'
   },
   {
     title: 'Meet the River Warrior',
