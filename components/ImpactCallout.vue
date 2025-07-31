@@ -38,7 +38,7 @@
 
 <style scoped>
 .impact-callout-section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem 4rem;
   display: flex;
   justify-content: center;
 }

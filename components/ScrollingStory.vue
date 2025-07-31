@@ -250,7 +250,7 @@ onUnmounted(() => {
 
 .section-title {
   font-size: 2.5rem;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   color: var(--color-primary);
   position: relative;
   padding-bottom: 1rem;
@@ -317,13 +317,13 @@ onUnmounted(() => {
   .mobile-view {
     display: block;
     position: relative;
-    padding-top: 2rem;
+    padding-top: 3.5rem;
   }
 
   .mobile-sections {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     position: static;
     height: auto;
     align-items: stretch;
@@ -363,7 +363,7 @@ onUnmounted(() => {
     max-width: 500px;
     overflow: auto;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     overflow-wrap: break-word;
     color: var(--color-primary);
   }
