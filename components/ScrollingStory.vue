@@ -9,7 +9,7 @@ interface StorySection {
 
 const sections: StorySection[] = [
   {
-    title: 'A Journey by Water',
+    title: 'Journey by Water',
     text:
       '<em>River Warrior</em> is the story of one woman’s journey into the heart of America’s' +
       ' water sheds—1,895 miles powered by nothing but a paddle, peddles, determination,' +
@@ -31,24 +31,35 @@ const sections: StorySection[] = [
   {
     title: 'Appalachia to the Gulf',
     text:
-      'Beginning in the highland headwaters of Lansing, North Carolina, Ann followed the current south—paddling through ' +
-      'rapids, dams, barges, industrial zones, and backwater bayous across four major rivers. She moved in rhythm with' +
-      ' the water, learning from it, battling it, and listening to its message.<br>' +
-      'Her journey began on the ancient <strong>New River</strong>, flowed into the damaged <strong>Kanawha</strong>, then the burdened <strong>Ohio</strong>, and finally ' +
-      'the mighty <strong>Mississippi</strong>—each revealing a different chapter of America’s relationship with water.<br>' +
-      'Ann’s journey ended on September 27th, 2024, as Hurricane Helene struck her hometown. She quickly shifted from ' +
-      'river warrior to relief worker, the storm underscoring her mission: to protect the water systems that connect, ' +
-      'sustain, and define us.',
+      'Beginning in the highland headwaters of Lansing, NC, Ann followed the current ' +
+      'south—paddling through rapids, lock/dam systems, barges, industrial zones, and ' +
+      'backwater bayous, across four major rivers and countless tributaries.<br>' +
+      'Her journey began on the ancient <strong>New River</strong>, winding through the resilient ' +
+      'Appalachians. On the <strong>Kanawha River</strong>, coal mining’s damage was stark and hard to ignore. ' +
+      'The <strong>Ohio River</strong> carried her west, bearing both commerce and pollution. At last, she ' +
+      'reached the mighty <strong>Mississippi River</strong>—vast, complex, and deeply symbolic of our ' +
+      'nation’s troubled relationship with water.<br>' +
+      'Ann’s journey ended successfully on September 27, 2024—just as Hurricane Helene hit her hometown. ' +
+      'She went from river warrior to relief worker overnight. After months of paddling the veins of our ' +
+      'interconnected water systems, nature struck home with devastating force—making her mission for ' +
+      'climate awareness and water protection more urgent than ever.',
     textMobile:
-      'Beginning in Lansing, North Carolina, Ann paddled south through rapids, dams, barges, and bayous—traveling four ' +
-      'major rivers and countless tributaries. Her path traced the ancient New, damaged Kanawha, burdened Ohio, and ' +
-      'mighty Mississippi, each revealing a chapter of America’s relationship with water. On September 27th, 2024, ' +
-      'Hurricane Helene struck her hometown, turning Ann from river warrior to relief worker. The storm’s devastation ' +
-      'deepened her mission to protect the water systems that sustain and connect us all.',
+      'Beginning in the highland headwaters of Lansing, NC, Ann followed the current ' +
+      'south—paddling through rapids, lock/dam systems, barges, industrial zones, and ' +
+      'backwater bayous, across four major rivers and countless tributaries.<br>' +
+      'Her journey began on the ancient <strong>New River</strong>, winding through the resilient ' +
+      'Appalachians. On the <strong>Kanawha River</strong>, coal mining’s damage was stark and hard to ignore. ' +
+      'The <strong>Ohio River</strong> carried her west, bearing both commerce and pollution. At last, she ' +
+      'reached the mighty <strong>Mississippi River</strong>—vast, complex, and deeply symbolic of our ' +
+      'nation’s troubled relationship with water.<br>' +
+      'Ann’s journey ended successfully on September 27, 2024—just as Hurricane Helene hit her hometown. ' +
+      'She went from river warrior to relief worker overnight. After months of paddling the veins of our ' +
+      'interconnected water systems, nature struck home with devastating force—making her mission for ' +
+      'climate awareness and water protection more urgent than ever.',
     video: '/videos/map-animation-final.mp4'
   },
   {
-    title: 'Meet the Woman Behind the Paddle',
+    title: 'Meet the River Warrior',
     text:
       'Ann Rose is not your typical adventurer. A self-taught, off-grid farmer in the ' +
       'mountains of Appalachia, she lives with deep intention on Rose Mountain Farm—a ' +
@@ -245,17 +256,6 @@ onUnmounted(() => {
   padding-bottom: 1rem;
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 25%;
-  height: 2px;
-  background-color: var(--color-primary);
-}
-
 .section-text {
   font-size: 1.25rem;
   line-height: 1.6;
@@ -356,11 +356,6 @@ onUnmounted(() => {
     font-size: 2rem;
     text-align: center;
     color: var(--color-primary);
-  }
-
-  .section-title::after {
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   .section-text {

@@ -16,15 +16,15 @@
       </div>
       <div class="impact-callout-content">
         <h2 class="impact-callout-title section-title">
-          Why Water Quality Matters
+          Mission Behind the Miles
         </h2>
         <p class="impact-callout-description text-primary">
-          Ann's journey down nearly 2,000 miles of river wasn't just an
-          adventure—it was a mission to reveal the hidden crisis in our
-          waterways. With every paddle stroke, she tested the water, uncovering
-          pollution and ecological threats that too often go unseen. Her story
-          is a call to move from passive awareness to urgent action for the
-          rivers that sustain us all.
+          Ann's journey through nearly 2,000 miles of river wasn't just an
+          adventure—it was a mission to reveal the crisis in our waterways.
+          Testing the water as she paddled, she uncovered pollution, decay, and
+          ecological threats hiding in plain sight. Her story is a call to each
+          of us to move from passive awareness to urgent action in protecting
+          the rivers that sustain us.
         </p>
         <NuxtLink
           class="impact-callout-btn bg-btn text-light rounded shadow-xs"

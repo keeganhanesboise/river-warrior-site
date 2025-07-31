@@ -10,7 +10,7 @@ useHead({
     },
 
     // Open Graph tags
-    { property: 'og:title', content: 'River Warrior – A Journey by Water' },
+    { property: 'og:title', content: 'River Warrior – Journey by Water' },
     {
       property: 'og:description',
       content:
@@ -25,7 +25,7 @@ useHead({
 
     // Twitter Card tags
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'River Warrior – A Journey by Water' },
+    { name: 'twitter:title', content: 'River Warrior – Journey by Water' },
     {
       name: 'twitter:description',
       content:

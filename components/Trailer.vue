@@ -56,17 +56,6 @@
   padding-bottom: 1rem;
 }
 
-.trailer-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 2px;
-  background-color: var(--color-accent);
-}
-
 .logline {
   line-height: 1.6;
   margin: 0;

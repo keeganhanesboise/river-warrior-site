@@ -2,7 +2,7 @@
 useHead({
   link: [
     { rel: 'preload', as: 'image', href: '/images/water_quality.webp' },
-    { rel: 'preload', as: 'image', href: '/images/water_quality.jpg' },
+    { rel: 'preload', as: 'image', href: '/images/water_quality.jpg' }
   ],
   title: 'Water Quality Impact - River Warrior Documentary',
   meta: [
@@ -73,10 +73,10 @@ useHead({
             revealed how little we actually understood. As we traveled down the
             river, the evidence of ecological harm was undeniable. Industrial
             runoff, agricultural waste, and systemic neglect all converged into
-            a stark reality: our water is in crisis. This journey transformed a
-            vague concept into a lived experience. We hope this film does the
-            same for others—moving “water awareness” from a passive phrase to an
-            urgent call to see, understand, and act.
+            a stark reality: our water is in crisis. This journey transformed
+            our vague concept into a lived experience. We hope this film does
+            the same for others—moving “water awareness” from a passive phrase
+            to an urgent call to see, understand, and act.
           </p>
         </div>
         <picture>
@@ -108,12 +108,12 @@ useHead({
             </picture>
           </div>
           <div class="impact-content">
-            <h2 class="impact-title">On-the-Ground Water Testing</h2>
+            <h2 class="impact-title">Water Testing</h2>
             <div class="impact-description">
               <p>
                 Throughout her journey down the river, Ann carried a
-                <strong>DANOPLUS 6-in-1 water quality meter</strong>
-                , a compact, field-ready device that allowed her to test water
+                <strong>DANOPLUS 6-in-1 water quality meter,</strong>
+                a compact, field-ready device that allowed her to test water
                 conditions in real time. This wasn’t just about data—it was
                 about witnessing and documenting the health of the rivers as it
                 changed from one bend to the next. In a story rooted in
@@ -223,12 +223,10 @@ useHead({
                 pollution and environmental degradation into something tactile
                 and immediate. It showed us that environmental harm doesn’t
                 always announce itself—it accumulates quietly, until the system
-                begins to break down. By incorporating this tool into our
-                fieldwork, we were able to document those breaking points with
-                clarity and evidence. Our hope is that these measurements help
-                viewers understand what’s truly at stake—and how urgent the need
-                is to protect and restore our waterways before the damage
-                becomes irreversible.
+                begins to break down. By incorporating this tool, our hope is
+                that these measurements help viewers understand what’s really at
+                stake—and how urgent the need is to protect and restore our
+                waterways before the damage becomes irreversible.
               </p>
             </div>
           </div>
@@ -247,15 +245,13 @@ useHead({
             </picture>
           </div>
           <div class="impact-content">
-            <h2 class="impact-title">Take Action for Our Rivers</h2>
+            <h2 class="impact-title">Take Action</h2>
             <div class="impact-description">
               <p>
-                Ann’s journey—and the water testing that accompanied
-                it—uncovered the quiet, cumulative damage hiding in our rivers.
-                These aren’t distant issues. They’re right beneath the surface
-                of the places we call home.
+                Ann’s journey and her water testing uncovered the quiet,
+                cumulative damage hiding in our rivers.
               </p>
-              <p>Now it’s your turn to join the current.</p>
+              <p>Now it’s your turn.</p>
               <p>
                 <strong>
                   → Support local watershed organizations doing the work on the
@@ -330,14 +326,6 @@ useHead({
                     Lower Mississippi Riverkeeper
                   </a>
                 </li>
-                <li>
-                  <a
-                    class="impact-link"
-                    href="https://www.deltadiscoverytours.com/"
-                    target="_blank">
-                    Delta Discovery Tours
-                  </a>
-                </li>
               </ul>
               <p>
                 <strong>→ Advocate for clean water protections</strong>
@@ -352,8 +340,8 @@ useHead({
                 to inspire awareness and action in your own watershed.
               </p>
               <p>
-                The rivers can’t speak—but we can. Let’s protect what sustains
-                us, before it’s too late.
+                The rivers can’t speak—but we can. Let’s protect them, before
+                it’s too late.
               </p>
             </div>
           </div>
