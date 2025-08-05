@@ -54,35 +54,86 @@ const socialLinks: FooterSocialIcon[] = [
       </div>
 
       <div class="footer-section contact">
-        <h3>Contact</h3>
-        <a class="email-link" href="mailto:annrosedocumentary2024@gmail.com">
-          annrosedocumentary2024@gmail.com
-        </a>
-        <div class="social-links">
-          <a
-            v-for="social in socialLinks"
-            :key="social.name"
-            class="social-link"
-            :href="social.url"
-            rel="noopener noreferrer"
-            target="_blank">
-            <picture v-if="social.icon.endsWith('.svg') === false">
-              <source
-                :srcset="social.icon.replace(/\.(png|jpg|jpeg|JPG)$/, '.webp')"
-                type="image/webp" />
+        <h3>Join the Journey</h3>
+
+        <form
+          class="contact-form"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          method="POST"
+          name="contact">
+          <input name="form-name" type="hidden" value="contact" />
+          <p class="hidden">
+            <label for="bot-field">
+              Don't fill this out if you're human:
+              <input id="bot-field" name="bot-field" />
+            </label>
+          </p>
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input
+              id="name"
+              class="form-input"
+              name="name"
+              placeholder="Your Name"
+              required
+              type="text" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input
+              id="email"
+              class="form-input"
+              name="email"
+              placeholder="Your Email"
+              required
+              type="email" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea
+              id="message"
+              class="form-textarea"
+              name="message"
+              placeholder="Your Message"
+              required
+              rows="4" />
+          </div>
+
+          <button class="submit-button" type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+          <div class="social-links">
+            <a
+              v-for="social in socialLinks"
+              :key="social.name"
+              class="social-link"
+              :href="social.url"
+              rel="noopener noreferrer"
+              target="_blank">
+              <picture v-if="social.icon.endsWith('.svg') === false">
+                <source
+                  :srcset="
+                    social.icon.replace(/\.(png|jpg|jpeg|JPG)$/, '.webp')
+                  "
+                  type="image/webp" />
+                <img
+                  alt="Documentary Instagram Page"
+                  class="social-icon"
+                  loading="lazy"
+                  :src="social.icon" />
+              </picture>
               <img
+                v-else
                 alt="Documentary Instagram Page"
                 class="social-icon"
                 loading="lazy"
                 :src="social.icon" />
-            </picture>
-            <img
-              v-else
-              alt="Documentary Instagram Page"
-              class="social-icon"
-              loading="lazy"
-              :src="social.icon" />
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -145,17 +196,102 @@ const socialLinks: FooterSocialIcon[] = [
   color: var(--color-accent);
 }
 
-.email-link {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  transition: color 0.3s ease;
+.contact-form {
+  margin-bottom: 2rem;
 }
 
-.email-link:hover {
-  color: var(--color-accent);
+.hidden {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius, 4px);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: #1e3a2f;
+  border: 2px solid transparent;
+  border-radius: var(--radius, 4px);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #1e3a2f;
+  color: #a8d4bc;
+  border: 2px solid #a8d4bc;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius, 4px);
+  font-size: 0.9rem;
+  background-color: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.submit-message.error {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.contact-info {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-links {
