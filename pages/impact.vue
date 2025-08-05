@@ -408,7 +408,6 @@ useHead({
   gap: 3rem;
   align-items: center;
   border: 1px solid #ccc;
-  border-radius: var(--radius-lg);
   padding: 2rem;
   background-color: white;
   box-shadow: var(--shadow);
@@ -496,7 +495,6 @@ useHead({
   width: 100%;
   height: 400px;
   object-fit: cover;
-  border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
 }
 

@@ -270,7 +270,6 @@ const handleSubmit = async (event: Event) => {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius, 4px);
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   font-size: 1rem;
@@ -301,7 +300,6 @@ const handleSubmit = async (event: Event) => {
   background-color: var(--color-accent);
   color: #1e3a2f;
   border: 2px solid transparent;
-  border-radius: var(--radius, 4px);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -323,7 +321,6 @@ const handleSubmit = async (event: Event) => {
 .submit-message {
   margin-top: 1rem;
   padding: 0.75rem;
-  border-radius: var(--radius, 4px);
   font-size: 0.9rem;
   background-color: rgba(34, 197, 94, 0.2);
   border: 1px solid rgba(34, 197, 94, 0.3);
@@ -355,7 +352,6 @@ const handleSubmit = async (event: Event) => {
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-round);
   background-color: transparent;
 }
 

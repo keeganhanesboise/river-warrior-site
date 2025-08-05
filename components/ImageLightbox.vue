@@ -55,7 +55,6 @@ onUnmounted(() => {
           max-width: 1920px;
           max-height: 90vh;
           object-fit: contain;
-          border-radius: 4px;
         " />
     </div>
   </div>
@@ -87,7 +86,6 @@ onUnmounted(() => {
   max-width: 100%;
   max-height: 90vh;
   object-fit: contain;
-  border-radius: var(--radius-xs);
 }
 
 .close-button {
@@ -100,7 +98,6 @@ onUnmounted(() => {
   color: white;
   cursor: pointer;
   padding: 0.5rem;
-  border-radius: var(--radius-round);
   display: flex;
   align-items: center;
   justify-content: center;

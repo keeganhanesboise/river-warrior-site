@@ -289,7 +289,6 @@ onUnmounted(() => {
   max-width: 100%;
   max-height: 70vh;
   object-fit: cover;
-  border-radius: var(--radius);
   aspect-ratio: 3/4;
   height: auto;
 }

@@ -215,7 +215,6 @@ const closeLightbox = () => {
                   width: 100%;
                   aspect-ratio: 16/9;
                   object-fit: cover;
-                  border-radius: 8px;
                   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                 " />
             </picture>
@@ -228,7 +227,6 @@ const closeLightbox = () => {
                 width: 100%;
                 aspect-ratio: 16/9;
                 object-fit: cover;
-                border-radius: 8px;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
               " />
           </div>
@@ -321,7 +319,6 @@ const closeLightbox = () => {
 .still img {
   width: 100%;
   object-fit: cover;
-  border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
@@ -335,7 +332,6 @@ const closeLightbox = () => {
   background: white;
   cursor: pointer;
   padding: 2rem;
-  border-radius: var(--radius);
   box-shadow: var(--shadow-xs);
   transition:
     transform 0.2s ease,
@@ -406,7 +402,6 @@ const closeLightbox = () => {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
@@ -429,7 +424,6 @@ const closeLightbox = () => {
   background-color: var(--color-primary);
   color: white;
   border: none;
-  border-radius: var(--radius-xs);
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;

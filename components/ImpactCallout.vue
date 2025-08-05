@@ -79,7 +79,6 @@
   background-color: var(--color-btn);
   color: var(--color-light);
   padding: 0.85rem 2.2rem;
-  border-radius: var(--radius-sm);
   border: solid var(--color-btn);
   text-decoration: none;
   transition:

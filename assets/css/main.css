@@ -10,15 +10,6 @@
   --color-btn: #6b3b2a;
   --color-btn-hover: #f5f5f0;
 
-  /* Border Radius */
-  --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-round: 50%;
-
   /* Box Shadows */
   --shadow-xs: 0 2px 8px rgba(30, 58, 47, 0.08);
   --shadow-sm: 0 2px 12px rgba(30, 58, 47, 0.13);
@@ -75,15 +66,6 @@
 }
 .bg-white {
   background-color: white;
-}
-.rounded {
-  border-radius: var(--radius);
-}
-.rounded-lg {
-  border-radius: var(--radius-lg);
-}
-.rounded-xl {
-  border-radius: var(--radius-xl);
 }
 .shadow {
   box-shadow: var(--shadow);
@@ -188,7 +170,6 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

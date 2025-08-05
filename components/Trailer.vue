@@ -81,7 +81,6 @@
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: var(--radius);
 }
 
 @media (min-width: 769px) {

@@ -220,7 +220,6 @@ const crewMembers: CrewMember[] = [
 .headshot-container {
   aspect-ratio: 1;
   overflow: hidden;
-  border-radius: var(--radius);
   max-width: 350px;
   margin: 0 auto;
 }
