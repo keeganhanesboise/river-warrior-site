@@ -26,6 +26,41 @@ const socialLinks: FooterSocialIcon[] = [
     icon: '/images/instagram_logo.svg'
   }
 ];
+
+const isSubmitting = ref(false);
+const submitMessage = ref('');
+
+const handleSubmit = async (event: Event) => {
+  event.preventDefault();
+  const form = event.target as HTMLFormElement;
+  const formData = new FormData(form);
+
+  isSubmitting.value = true;
+  submitMessage.value = '';
+
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData as any).toString()
+    });
+
+    if (response.ok) {
+      submitMessage.value =
+        "Thank you for your message! We'll get back to you soon.";
+      form.reset();
+    } else {
+      submitMessage.value =
+        'There was an error sending your message. Please try again.';
+    }
+  } catch (error) {
+    console.error(error);
+    submitMessage.value =
+      'There was an error sending your message. Please try again.';
+  } finally {
+    isSubmitting.value = false;
+  }
+};
 </script>
 
 <template>
@@ -61,7 +96,8 @@ const socialLinks: FooterSocialIcon[] = [
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           method="POST"
-          name="contact">
+          name="contact"
+          @submit="handleSubmit">
           <input name="form-name" type="hidden" value="contact" />
           <p class="hidden">
             <label for="bot-field">
@@ -102,7 +138,16 @@ const socialLinks: FooterSocialIcon[] = [
               rows="4" />
           </div>
 
-          <button class="submit-button" type="submit">Send Message</button>
+          <button class="submit-button" :disabled="isSubmitting" type="submit">
+            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+          </button>
+
+          <p
+            v-if="submitMessage"
+            class="submit-message"
+            :class="{ error: submitMessage.includes('error') }">
+            {{ submitMessage }}
+          </p>
         </form>
 
         <div class="contact-info">
