@@ -50,6 +50,11 @@ useHead({
 
 const pressItems = [
   {
+    title: 'REI Podcast Interview',
+    source: 'REI CO-OP Studios',
+    url: 'https://pod.link/1183017174/episode/M2FmYzI1N2EtZTgxMS00MTZmLTgyODUtOTViMDdhOTc2MTQ4'
+  },
+  {
     title: 'Farmer completes 2000 mile paddle from carolina to the gulf',
     source: 'Blue Ridge Outdoors',
     url: 'https://www.blueridgeoutdoors.com/magazine/december-2024/farmer-completes-2000-mile-paddle-from-carolina-to-the-gulf/'
@@ -73,11 +78,6 @@ const pressItems = [
     title: 'Ann Rose Send Off',
     source: 'New River Conservancy',
     url: 'https://newriverconservancy.org/event/ann-rose-send-off/'
-  },
-  {
-    title: 'REI Podcast Interview (Coming Soon)',
-    source: 'REI Podcasts',
-    url: ''
   }
 ];
 
@@ -163,23 +163,16 @@ const closeLightbox = () => {
       <div class="press-container">
         <h2 class="section-title">In the News</h2>
         <div class="press-cards">
-          <div
+          <a
             v-for="(item, index) in displayedPressItems"
             :key="index"
-            class="press-card">
-            <a
-              v-if="item.url"
-              :href="item.url"
-              rel="noopener noreferrer"
-              target="_blank">
-              <h3 class="press-title">{{ item.title }}</h3>
-              <p class="press-source">{{ item.source }}</p>
-            </a>
-            <div v-else>
-              <h3 class="press-title">{{ item.title }}</h3>
-              <p class="press-source">{{ item.source }}</p>
-            </div>
-          </div>
+            class="press-card"
+            :href="item.url"
+            rel="noopener noreferrer"
+            target="_blank">
+            <h3 class="press-title">{{ item.title }}</h3>
+            <p class="press-source">{{ item.source }}</p>
+          </a>
         </div>
         <button
           v-if="pressItems.length > 3"
@@ -329,6 +322,9 @@ const closeLightbox = () => {
 }
 
 .press-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
   background: white;
   cursor: pointer;
   padding: 2rem;
@@ -341,12 +337,6 @@ const closeLightbox = () => {
 .press-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-}
-
-.press-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
 }
 
 .press-title {
