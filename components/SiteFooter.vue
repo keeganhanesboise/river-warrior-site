@@ -51,12 +51,12 @@ const handleSubmit = async (event: Event) => {
       form.reset();
     } else {
       submitMessage.value =
-        'There was an error sending your message. Please try again.';
+        'There was an error sending your message. Please try again or email annrosedocumentary2024@gmail.com directly.';
     }
   } catch (error) {
     console.error(error);
     submitMessage.value =
-      'There was an error sending your message. Please try again.';
+      'There was an error sending your message. Please try again or email annrosedocumentary2024@gmail.com directly.';
   } finally {
     isSubmitting.value = false;
   }
