@@ -175,3 +175,37 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/*
+    Set all input fonts to franklin-gothic-lt-cond
+ */
+
+input,
+textarea {
+    font-family: 'franklin-gothic-lt-cond', sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'franklin-gothic-lt-cond', sans-serif;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    font-family: 'franklin-gothic-lt-cond', sans-serif;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    font-family: 'franklin-gothic-lt-cond', sans-serif;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    font-family: 'franklin-gothic-lt-cond', sans-serif;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    font-family: 'franklin-gothic-lt-cond', sans-serif;
+}
