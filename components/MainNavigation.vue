@@ -54,7 +54,7 @@ const links: NavLink[] = [
 .nav-link {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   letter-spacing: 0.1em;
   padding: 0.5rem 0.75rem;
   position: relative;
@@ -98,6 +98,10 @@ const links: NavLink[] = [
 @media (min-width: 640px) {
   .navigation ul {
     gap: 3rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
   }
 }
 </style>

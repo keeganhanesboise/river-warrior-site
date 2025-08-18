@@ -257,7 +257,7 @@ const crewMembers: CrewMember[] = [
 .member-bio {
   display: block;
   text-align: justify;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
   white-space: pre-wrap;
@@ -271,7 +271,7 @@ const crewMembers: CrewMember[] = [
   .member-bio-mobile {
     display: block;
     text-align: center;
-    font-size: 1.125rem;
+    font-size: 0.85rem;
     line-height: 1.6;
     margin: 0;
     white-space: pre-wrap;

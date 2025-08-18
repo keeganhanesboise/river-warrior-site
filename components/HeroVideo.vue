@@ -254,7 +254,7 @@ onMounted(() => {
 }
 
 .scroll-text {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   opacity: 0.8;
@@ -277,6 +277,12 @@ onMounted(() => {
   }
   60% {
     transform: translateY(-5px);
+  }
+}
+
+@media (min-width: 640px) {
+  .scroll-text {
+    font-size: 0.85rem;
   }
 }
 </style>

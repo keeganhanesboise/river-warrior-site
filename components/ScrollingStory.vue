@@ -257,7 +257,7 @@ onUnmounted(() => {
 }
 
 .section-text {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
   color: var(--color-primary);
@@ -358,7 +358,7 @@ onUnmounted(() => {
   }
 
   .section-text {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     max-width: 500px;
     overflow: auto;
     text-align: center;

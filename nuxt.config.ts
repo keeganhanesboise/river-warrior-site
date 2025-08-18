@@ -7,7 +7,15 @@ export default defineNuxtConfig({
   // Enable SSR to allow static image generation
   ssr: true,
 
-  modules: ['@nuxt/image-edge'],
+  modules: ['@nuxt/image-edge', '@nuxtjs/google-fonts'],
+
+  googleFonts: {
+    families: {
+      'Libre Franklin': [400, 500, 700]
+    },
+    display: 'swap',
+    download: false
+  },
 
   // Use static preset for static site generation
   nitro: {

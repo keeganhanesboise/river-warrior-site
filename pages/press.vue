@@ -292,7 +292,7 @@ const closeLightbox = () => {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 2rem;
   text-align: center;
@@ -340,7 +340,7 @@ const closeLightbox = () => {
 }
 
 .press-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
