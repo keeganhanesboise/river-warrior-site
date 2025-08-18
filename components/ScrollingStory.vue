@@ -11,7 +11,7 @@ const sections: StorySection[] = [
   {
     title: 'Journey by Water',
     text:
-      '<em>River Warrior</em> is the story of one woman’s journey into the heart of America’s' +
+      '\t<em>River Warrior</em> is the story of one woman’s journey into the heart of America’s' +
       ' water sheds—1,895 miles powered by nothing but a paddle, peddles, determination,' +
       ' and the belief that water is worth fighting for. In July 2024, Ann Rose launched ' +
       'her kayak into a creek near her farm and began her journey from the Appalachian ' +
@@ -20,7 +20,7 @@ const sections: StorySection[] = [
       'too often neglected or threatened. This journey wasn’t just about endurance—it was ' +
       'about honoring the rivers and raising awareness for the need to protect them.',
     textMobile:
-      '<em>River Warrior</em> follows one woman’s 1,895-mile journey through America’s ' +
+      '\t<em>River Warrior</em> follows one woman’s 1,895-mile journey through America’s ' +
       'watersheds—powered by a paddle, pedals, and a fierce belief that water is worth ' +
       'fighting for. In July 2024, Ann Rose launched her kayak near her Appalachian farm ' +
       'and traveled to the Gulf of Mexico. Along the way, she moved through rivers that ' +
@@ -31,28 +31,28 @@ const sections: StorySection[] = [
   {
     title: 'Appalachia to the Gulf',
     text:
-      'Beginning in the highland headwaters of Lansing, NC, Ann followed the current ' +
+      '\tBeginning in the highland headwaters of Lansing, NC, Ann followed the current ' +
       'south—paddling through rapids, lock/dam systems, barges, industrial zones, and ' +
-      'backwater bayous, across four major rivers and countless tributaries.<br>' +
-      'Her journey began on the ancient <strong>New River</strong>, winding through the resilient ' +
+      'backwater bayous, across four major rivers and countless tributaries.<br><br>' +
+      '\tHer journey began on the ancient <strong>New River</strong>, winding through the resilient ' +
       'Appalachians. On the <strong>Kanawha River</strong>, coal mining’s damage was stark and hard to ignore. ' +
       'The <strong>Ohio River</strong> carried her west, bearing both commerce and pollution. At last, she ' +
       'reached the mighty <strong>Mississippi River</strong>—vast, complex, and deeply symbolic of our ' +
-      'nation’s troubled relationship with water.<br>' +
-      'Ann’s journey ended successfully on September 27, 2024—just as Hurricane Helene hit her hometown. ' +
+      'nation’s troubled relationship with water.<br><br>' +
+      '\tAnn’s journey ended successfully on September 27, 2024—just as Hurricane Helene hit her hometown. ' +
       'She went from river warrior to relief worker overnight. After months of paddling the veins of our ' +
       'interconnected water systems, nature struck home with devastating force—making her mission for ' +
       'climate awareness and water protection more urgent than ever.',
     textMobile:
-      'Beginning in the highland headwaters of Lansing, NC, Ann followed the current ' +
+      '\tBeginning in the highland headwaters of Lansing, NC, Ann followed the current ' +
       'south—paddling through rapids, lock/dam systems, barges, industrial zones, and ' +
-      'backwater bayous, across four major rivers and countless tributaries.<br>' +
-      'Her journey began on the ancient <strong>New River</strong>, winding through the resilient ' +
+      'backwater bayous, across four major rivers and countless tributaries.<br><br>' +
+      '\tHer journey began on the ancient <strong>New River</strong>, winding through the resilient ' +
       'Appalachians. On the <strong>Kanawha River</strong>, coal mining’s damage was stark and hard to ignore. ' +
       'The <strong>Ohio River</strong> carried her west, bearing both commerce and pollution. At last, she ' +
       'reached the mighty <strong>Mississippi River</strong>—vast, complex, and deeply symbolic of our ' +
-      'nation’s troubled relationship with water.<br>' +
-      'Ann’s journey ended successfully on September 27, 2024—just as Hurricane Helene hit her hometown. ' +
+      'nation’s troubled relationship with water.<br><br>' +
+      '\tAnn’s journey ended successfully on September 27, 2024—just as Hurricane Helene hit her hometown. ' +
       'She went from river warrior to relief worker overnight. After months of paddling the veins of our ' +
       'interconnected water systems, nature struck home with devastating force—making her mission for ' +
       'climate awareness and water protection more urgent than ever.',
@@ -61,7 +61,7 @@ const sections: StorySection[] = [
   {
     title: 'Meet the River Warrior',
     text:
-      'Ann Rose is not your typical adventurer. A self-taught, off-grid farmer in the ' +
+      '\tAnn Rose is not your typical adventurer. A self-taught, off-grid farmer in the ' +
       'mountains of Appalachia, she lives with deep intention on Rose Mountain Farm—a ' +
       'homestead she built by hand, rooted in self-reliance and reverence for the land. ' +
       'As a farmer, she deeply understands that clean, accessible water is the foundation ' +
@@ -71,7 +71,7 @@ const sections: StorySection[] = [
       "<em>River Warrior</em> introduces audiences to a woman who doesn't just talk about change—she " +
       'lives it, paddles it, and fights for it.',
     textMobile:
-      'Ann Rose is no ordinary adventurer. A self-taught, off-grid farmer in Appalachia, she built ' +
+      '\tAnn Rose is no ordinary adventurer. A self-taught, off-grid farmer in Appalachia, she built ' +
       'Rose Mountain Farm by hand, grounded in self-reliance and reverence for the land. She knows ' +
       'water is life—it feeds her crops, her animals, and everything downstream. That truth led her ' +
       'to the river, not just for discovery, but to speak for the overlooked watersheds. River Warrior ' +
@@ -259,6 +259,7 @@ onUnmounted(() => {
 .section-text {
   font-size: 1.1rem;
   line-height: 1.6;
+  white-space: pre-wrap;
   margin: 0;
   color: var(--color-primary);
 }
