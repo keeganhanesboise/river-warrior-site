@@ -191,7 +191,6 @@ const crewMembers: CrewMember[] = [
   position: relative;
   z-index: 2;
   color: white;
-  font-size: 3.5rem;
   text-align: center;
   margin: 0;
   padding: 0 1rem;
@@ -238,13 +237,11 @@ const crewMembers: CrewMember[] = [
 }
 
 .member-name {
-  font-size: 2.5rem;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   color: var(--color-primary);
 }
 
 .member-title {
-  font-size: 1.25rem;
   margin: 0 0 1.5rem 0;
   color: var(--color-primary);
   opacity: 0.9;
@@ -257,7 +254,6 @@ const crewMembers: CrewMember[] = [
 .member-bio {
   display: block;
   text-align: justify;
-  font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
   white-space: pre-wrap;
@@ -271,7 +267,6 @@ const crewMembers: CrewMember[] = [
   .member-bio-mobile {
     display: block;
     text-align: center;
-    font-size: 0.85rem;
     line-height: 1.6;
     margin: 0;
     white-space: pre-wrap;
@@ -314,10 +309,6 @@ const crewMembers: CrewMember[] = [
 
   .member:nth-child(even) .member-info {
     text-align: right;
-  }
-
-  .member-name {
-    font-size: 2.5rem;
   }
 }
 </style>

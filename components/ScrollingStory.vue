@@ -249,7 +249,6 @@ onUnmounted(() => {
 }
 
 .section-title {
-  font-size: 2.5rem;
   margin: 0;
   color: var(--color-primary);
   position: relative;
@@ -257,7 +256,6 @@ onUnmounted(() => {
 }
 
 .section-text {
-  font-size: 1.1rem;
   line-height: 1.6;
   white-space: pre-wrap;
   margin: 0;
@@ -353,13 +351,11 @@ onUnmounted(() => {
   }
 
   .section-title {
-    font-size: 2rem;
     text-align: center;
     color: var(--color-primary);
   }
 
   .section-text {
-    font-size: 0.85rem;
     max-width: 500px;
     overflow: auto;
     text-align: center;

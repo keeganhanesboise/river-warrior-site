@@ -41,7 +41,7 @@
 .text-content {
   text-align: center;
   color: white;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   max-width: 900px;
   margin-left: auto;
@@ -49,7 +49,7 @@
 }
 
 .trailer-header {
-  margin: 0 0 2rem;
+  margin: 0;
   color: var(--color-accent);
   position: relative;
   display: inline-block;
@@ -93,7 +93,7 @@
   }
 
   .text-content {
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
     width: 75%;
   }
 }

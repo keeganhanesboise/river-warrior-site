@@ -385,7 +385,6 @@ useHead({
   position: relative;
   z-index: 2;
   color: white;
-  font-size: 3.5rem;
   text-align: center;
   margin: 0;
   padding: 0 1rem;
@@ -472,7 +471,6 @@ useHead({
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
   align-items: center;
 }
 

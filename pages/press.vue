@@ -274,7 +274,6 @@ const closeLightbox = () => {
   position: relative;
   z-index: 2;
   color: white;
-  font-size: 3.5rem;
   text-align: center;
   margin: 0;
   padding: 0 1rem;
@@ -292,7 +291,6 @@ const closeLightbox = () => {
 }
 
 .section-title {
-  font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 2rem;
   text-align: center;
@@ -300,7 +298,6 @@ const closeLightbox = () => {
 
 .press-list li a {
   color: var(--color-primary);
-  font-size: 1.25rem;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -340,7 +337,6 @@ const closeLightbox = () => {
 }
 
 .press-title {
-  font-size: 1.25rem;
   color: var(--color-primary);
   margin-bottom: 0.5rem;
 }

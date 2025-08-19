@@ -92,7 +92,16 @@
   color: var(--color-btn);
 }
 
+.impact-callout-title {
+  margin-top: 0;
+}
+
 @media (min-width: 900px) {
+  .impact-callout-title {
+    margin-top: 0;
+    text-align: left;
+  }
+
   .impact-callout-section {
     padding: 0 2rem 10rem;
   }
