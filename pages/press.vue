@@ -65,9 +65,9 @@ const pressItems = [
     url: 'https://appvoices.org/2024/11/01/rose-completes-paddle/ '
   },
   {
-    title: 'Ann Rose Update',
-    source: 'App Voices',
-    url: 'https://appvoices.org/2024/08/08/ann-rose-update/ '
+    title: 'North Carolina \'River Warrior\' paddles to the Gulf Coast from her farm in Lansing, NC',
+    source: 'WFAE',
+    url: 'https://www.wfae.org/energy-environment/2025-08-15/north-carolina-river-warrior-paddles-to-the-gulf-coast-from-her-farm-in-lansing-nc?utm_campaign=linkinbio&utm_medium=referral&utm_source=later-linkinbio'
   },
   {
     title: "Ann Rose, the 'River Warrior'",
