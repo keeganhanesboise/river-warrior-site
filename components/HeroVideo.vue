@@ -41,29 +41,29 @@ onMounted(() => {
 
   const webpSupported = canUseWebP();
 
-  if (isMobile.value) {
-    poster.value = webpSupported
+  poster.value = isMobile.value
+    ? (webpSupported
       ? '/videos/hero-video-mobile-poster.webp'
-      : '/videos/hero-video-mobile-poster.jpg';
-  } else {
-    poster.value = webpSupported
+      : '/videos/hero-video-mobile-poster.jpg')
+    : (webpSupported
       ? '/videos/hero-video-poster.webp'
-      : '/videos/hero-video-poster.jpg';
-  }
+      : '/videos/hero-video-poster.jpg');
 
   videoEl.poster = poster.value;
 
   const sources = isMobile.value
     ? [{ src: '/videos/hero-video-mobile.mp4', type: 'video/mp4' }]
     : [
-        { src: '/videos/hero-video.webm', type: 'video/webm' },
-        { src: '/videos/hero-video.mp4', type: 'video/mp4' }
-      ];
+      { src: '/videos/hero-video.mp4', type: 'video/mp4' },
+      { src: '/videos/hero-video.webm', type: 'video/webm' }
+    ];
 
+  // Clear existing sources
   while (videoEl.firstChild) {
     videoEl.removeChild(videoEl.firstChild);
   }
 
+  // Inject new sources
   sources.forEach(({ src, type }) => {
     const source = document.createElement('source');
     source.src = src;
@@ -71,15 +71,25 @@ onMounted(() => {
     videoEl.appendChild(source);
   });
 
-  // Seek to 12 seconds after metadata is loaded
+  // Safari quirks fix
+  videoEl.muted = true;
+
+  // Only seek/play once the video can play
   videoEl.addEventListener('loadedmetadata', () => {
     if (videoEl.duration > 12) {
       videoEl.currentTime = 12;
     }
+  });
 
-    // Attempt to play the video
+  videoEl.addEventListener('canplay', () => {
     videoEl.play().catch(() => {
-      // Autoplay failed (likely low power mode or user gesture needed)
+      videoFallback.value = true;
+    });
+  });
+
+  // Robust fallback handling
+  ['error', 'stalled', 'abort'].forEach(evt => {
+    videoEl.addEventListener(evt, () => {
       videoFallback.value = true;
     });
   });
@@ -101,8 +111,7 @@ onMounted(() => {
       muted
       playsinline
       :poster="poster"
-      preload="auto"
-      webkit-playsinline>
+      preload="metadata">
       <!-- Sources will be injected via JS -->
       Your browser does not support the video tag.
     </video>
