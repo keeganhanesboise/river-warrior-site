@@ -24,10 +24,10 @@ useHead({
         'Browse press articles, download official stills, and access the media kit for River Warrior — a documentary highlighting water quality from Appalachia to the Gulf.'
     },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://riverwarrior.netlify.app/press' },
+    { property: 'og:url', content: 'https://riverwarriordocumentary.com/press' },
     {
       property: 'og:image',
-      content: 'https://riverwarrior.netlify.app/images/press-hero.jpg'
+      content: 'https://riverwarriordocumentary.com/images/press-hero.jpg'
     },
 
     // Twitter Card tags
@@ -43,7 +43,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: 'https://riverwarrior.netlify.app/images/press-hero.jpg'
+      content: 'https://riverwarriordocumentary.com/images/press-hero.jpg'
     }
   ]
 });

@@ -36,10 +36,10 @@ useHead({
         'Go behind the scenes with the River Warrior crew. Learn about the filmmakers who captured Ann Rose’s 1,895-mile river journey to raise awareness for clean water.'
     },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://riverwarrior.netlify.app/crew' },
+    { property: 'og:url', content: 'https://riverwarriordocumentary.com/crew' },
     {
       property: 'og:image',
-      content: 'https://riverwarrior.netlify.app/images/camera_crew.jpg'
+      content: 'https://riverwarriordocumentary.com/images/camera_crew.jpg'
     },
 
     // Twitter Card tags
@@ -55,7 +55,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: 'https://riverwarrior.netlify.app/images/camera_crew.jpg'
+      content: 'https://riverwarriordocumentary.com/images/camera_crew.jpg'
     }
   ]
 });

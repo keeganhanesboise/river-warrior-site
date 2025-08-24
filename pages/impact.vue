@@ -21,10 +21,10 @@ useHead({
         'Follow Ann Rose as she tests water quality across nearly 2,000 miles of American rivers, revealing the unseen crisis threatening our waterways.'
     },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://riverwarrior.netlify.app/impact' },
+    { property: 'og:url', content: 'https://riverwarriordocumentary.com/impact' },
     {
       property: 'og:image',
-      content: 'https://riverwarrior.netlify.app/images/water_quality.jpg'
+      content: 'https://riverwarriordocumentary.com/images/water_quality.jpg'
     },
 
     // Twitter Card tags
@@ -37,7 +37,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: 'https://riverwarrior.netlify.app/images/water_quality.jpg'
+      content: 'https://riverwarriordocumentary.com/images/water_quality.jpg'
     }
   ]
 });
