@@ -94,7 +94,7 @@ const crewMembers: CrewMember[] = [
   },
   {
     name: 'Savannah Dodd',
-    title: 'Producer & Editor',
+    title: 'Producer & Story Editor',
     bio:
       '\tSavannah Dodd is a seasoned Post-Production Supervisor and Creative Impact Producer with over 10 years of experience in documentary filmmaking, immersive media, and mission-driven content. Her expertise lies in guiding projects from development through final delivery, with a focus on environmental and social impact storytelling.\n' +
       '\tOriginally from Sri Lanka and Australia, Savannah is now based in Beverly Hills, California, where she champions nonfiction storytelling that educates, inspires, and sparks change. She currently leads post-production and impact strategy for the feature documentary River Warrior, where she oversees editorial workflows, coordinates international production logistics, and drives outreach efforts to align the film with grassroots and institutional partners.\n' +
