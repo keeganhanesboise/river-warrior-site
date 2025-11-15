@@ -76,10 +76,10 @@
 
 .impact-callout-btn {
   display: inline-block;
-  background-color: var(--color-btn);
+  background-color: var(--color-green);
   color: var(--color-light);
   padding: 0.85rem 2.2rem;
-  border: solid var(--color-btn);
+  border: solid var(--color-green);
   text-decoration: none;
   transition:
     background 0.2s,
@@ -89,7 +89,7 @@
 
 .impact-callout-btn:hover {
   background-color: var(--color-btn-hover);
-  color: var(--color-btn);
+  color: var(--color-green);
 }
 
 .impact-callout-title {
