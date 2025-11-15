@@ -14,6 +14,16 @@ useHead({
       rel: 'preload',
       as: 'image',
       href: '/images/caroline_renfro_headshot.jpg'
+    },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/images/etienne_surrette_headshot.jpg'
+    },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/images/justin_faircloth_headshot.jpg'
     }
   ],
   title: 'Meet the Crew – River Warrior Documentary',
@@ -112,6 +122,26 @@ const crewMembers: CrewMember[] = [
     bioMobile:
       'Caroline Renfro is an actor, emcee, and producer from Charlotte, NC, with over 15 years of national hosting experience. A celebrated stage performer, she earned Best Actor and Theatreperson of the Year for her role in Grounded. Now based in Ashe County, she’s produced community relief efforts, managed the Kruger Brothers, and leads arts advocacy through Lost Province Center. Caroline is producing a TV pilot on Appalachian art and launching a recording studio—while proudly supporting River Warrior.',
     image: '/images/caroline_renfro_headshot.jpg'
+  },
+  {
+    name: 'Etienne Surrette',
+    title: 'Editor',
+    bio:
+      '\tEtienne is a director and photographer based out of Whitefish, Montana. Raised in rural Pennsylvania by loving parents and encouraged to pursue his creativity, Etienne grew to enjoy writing, music, and photography. An eleven-year-old Etienne would make a habit of sneaking his mom\'s camera out and using it to take "realistic" photos of his hotwheels collection. \n' +
+      '\tEtienne met his wife, Sarai, in church at sixteen and they became college sweethearts, married in 2020. Together they have a one-year-old daughter. \n' +
+      '\tAfter a few summer jobs in the Northwest and several long roadtrips, Etienne began a career shooting outdoor documentary and travel pieces. In 2023 through 2024 he was mentored by Forrest Mankins, and they shot many fun projects together. \n' +
+      '\tToday Etienne works in directing adventure, lifestyle, and creative pieces. He has just finished a fishing documentary, and was happy to accept when the crew of River Warrior offered him a position on the film!',
+    bioMobile:
+      "Etienne Surrette is a director and photographer based in Whitefish, Montana. Raised in rural Pennsylvania, he discovered his passion for photography at age 11, sneaking his mom's camera to photograph his hotwheels collection. After summer jobs in the Northwest and long road trips, Etienne built a career shooting outdoor documentary and travel pieces, mentored by Forrest Mankins. He now directs adventure, lifestyle, and creative pieces—recently completing a fishing documentary before joining the River Warrior crew.",
+    image: '/images/etienne_surrette_headshot.jpg'
+  },
+  {
+    name: 'Justin Faircloth',
+    title: 'Film Composer',
+    bio: '\tJustin is a North Carolina–based composer, producer, and performing artist with a creative footprint in Charlotte and the NC High Country. Equally at home on stage or in the studio, he’s known for blending artistry and versatility into music that connects and inspires.',
+    bioMobile:
+      'Justin is a North Carolina–based composer, producer, and performing artist with a creative footprint in Charlotte and the NC High Country. Equally at home on stage or in the studio, he’s known for blending artistry and versatility into music that connects and inspires.',
+    image: '/images/justin_faircloth_headshot.jpg'
   }
 ];
 </script>
